@@ -401,7 +401,8 @@
     "empty_string": {
       "description": "Empty string type for fields that can accept empty string values",
       "type": "string",
-      "enum": [""]
+      "maxLength": 0,
+      "minLength": 0
     },
     "tpt": {
       "type": "object",
@@ -434,7 +435,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0006_Valuation_date": {
@@ -450,7 +451,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0008b_Total_number_of_shares": {
@@ -458,7 +459,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0009_Cash_ratio": {
@@ -466,7 +467,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ],
           "maximum": 1
         },
@@ -475,7 +476,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0011_Complete_SCR_delivery": {
@@ -526,7 +527,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0020_Contract_size_for_derivatives": {
@@ -546,7 +547,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0023_Clean_market_valuation_in_quotation_currency_(A)": {
@@ -554,7 +555,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0024_Market_valuation_in_portfolio_currency_(B)": {
@@ -562,7 +563,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0025_Clean_market_valuation_in_portfolio_currency_(B)": {
@@ -570,7 +571,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0026_Valuation_weight": {
@@ -578,7 +579,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0027_Market_exposure_amount_in_quotation_currency_(A)": {
@@ -586,7 +587,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0028_Market_exposure_amount_in_portfolio_currency_(B)": {
@@ -594,7 +595,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0029_Market_exposure_amount_for_the_3rd_quotation_currency_(C)": {
@@ -602,7 +603,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0030_Market_exposure_in_weight": {
@@ -610,7 +611,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0031_Market_exposure_for_the_3rd_currency_in_weight_over_NAV": {
@@ -618,7 +619,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0032_Interest_rate_type": {
@@ -630,7 +631,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0034_Interest_rate_reference_identification": {
@@ -650,7 +651,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0038_Coupon_payment_frequency": {
@@ -670,7 +671,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ],
           "minimum": 0
         },
@@ -691,7 +692,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0046_Issuer_name": {
@@ -732,7 +733,7 @@
           "anyOf": [
             { "type": "integer" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ],
           "enum": [1, 2, 3, null]
         },
@@ -773,7 +774,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0062_Conversion_factor_(convertibles)_concordance_factor_parity_(options)": {
@@ -781,7 +782,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0063_Effective_date_of_instrument": {
@@ -823,7 +824,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0073_Country_of_quotation_of_the_underlying_asset": {
@@ -839,7 +840,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0076_Coupon_payment_frequency_of_the_underlying_asset": {
@@ -859,7 +860,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ],
           "minimum": 0
         },
@@ -917,7 +918,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0091_Modified_duration_to_next_option_exercise_date": {
@@ -925,7 +926,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0092_Credit_sensitivity": {
@@ -933,7 +934,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0093_Sensitivity_to_underlying_asset_price_(delta)": {
@@ -941,7 +942,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0094_Convexity_gamma_for_derivatives": {
@@ -949,7 +950,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0094b_Vega": {
@@ -957,7 +958,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0095_Identification_of_the_original_portfolio_for_positions_embedded_in_a_fund": {
@@ -970,7 +971,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0098_SCR_mrkt_IR_down_weight_over_NAV": {
@@ -978,7 +979,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0099_SCR_mrkt_eq_type1_weight_over_NAV": {
@@ -986,7 +987,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0100_SCR_mrkt_eq_type2_weight_over_NAV": {
@@ -994,7 +995,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0101_SCR_mrkt_prop_weight_over_NAV": {
@@ -1002,7 +1003,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0102_SCR_mrkt_spread_bonds_weight_over_NAV": {
@@ -1010,7 +1011,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0103_SCR_mrkt_spread_structured_weight_over_NAV": {
@@ -1018,7 +1019,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0104_SCR_mrkt_spread_derivatives_up_weight_over_NAV": {
@@ -1026,7 +1027,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0105_SCR_mrkt_spread_derivatives_down_weight_over_NAV": {
@@ -1034,7 +1035,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0105a_SCR_mrkt_FX_up_weight_over_NAV": {
@@ -1042,7 +1043,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0105b_SCR_mrkt_FX_down_weight_over_NAV": {
@@ -1050,7 +1051,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0106_Asset_pledged_as_collateral": {
@@ -1074,7 +1075,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0112_Credit_rating": {
@@ -1141,7 +1142,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0125_Accrued_income_(Security Denominated Currency)": {
@@ -1149,7 +1150,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0126_Accrued_income_(Portfolio Denominated Currency)": {
@@ -1157,7 +1158,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0127_Bond_floor_(convertible_instrument_only)": {
@@ -1165,7 +1166,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0128_Option_premium_(convertible_instrument_only)": {
@@ -1173,7 +1174,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0129_Valuation_yield": {
@@ -1181,7 +1182,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0130_Valuation_z_spread": {
@@ -1189,7 +1190,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0131_Underlying_asset_category": {
@@ -1214,7 +1215,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         },
         "0137_Counterparty_sector": {
@@ -1230,7 +1231,7 @@
           "anyOf": [
             { "type": "number" },
             { "type": "null" },
-            { "": "#/$defs/empty_string" }
+            { "$ref": "#/$defs/empty_string" }
           ]
         }
       },

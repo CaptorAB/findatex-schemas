@@ -9066,7 +9066,7 @@
     "0072_Last_valuation_price_of_the_underlying_asset": "",
     "0073_Country_of_quotation_of_the_underlying_asset": "",
     "0074_Economic_area_of_quotation_of_the_underlying_asset": "",
-    "0075_Coupon_rate_of_the_underlying_asset": "0.02734",
+    "0075_Coupon_rate_of_the_underlying_asset": 0.02734,
     "0076_Coupon_payment_frequency_of_the_underlying_asset": "",
     "0077_Maturity_date_of_the_underlying_asset": "2036-03-26",
     "0078_Redemption_profile_of_the_underlying_asset": "",

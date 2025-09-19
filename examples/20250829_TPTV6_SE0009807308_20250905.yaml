@@ -17949,7 +17949,7 @@
   0072_Last_valuation_price_of_the_underlying_asset: ""
   0073_Country_of_quotation_of_the_underlying_asset: ""
   0074_Economic_area_of_quotation_of_the_underlying_asset: ""
-  0075_Coupon_rate_of_the_underlying_asset: "0.026760000000000003"
+  0075_Coupon_rate_of_the_underlying_asset: 0.02676
   0076_Coupon_payment_frequency_of_the_underlying_asset: ""
   0077_Maturity_date_of_the_underlying_asset: "2035-11-28"
   0078_Redemption_profile_of_the_underlying_asset: ""
@@ -18092,7 +18092,7 @@
   0072_Last_valuation_price_of_the_underlying_asset: ""
   0073_Country_of_quotation_of_the_underlying_asset: ""
   0074_Economic_area_of_quotation_of_the_underlying_asset: ""
-  0075_Coupon_rate_of_the_underlying_asset: "0.026760000000000003"
+  0075_Coupon_rate_of_the_underlying_asset: 0.02676
   0076_Coupon_payment_frequency_of_the_underlying_asset: ""
   0077_Maturity_date_of_the_underlying_asset: "2035-12-18"
   0078_Redemption_profile_of_the_underlying_asset: ""
@@ -18235,7 +18235,7 @@
   0072_Last_valuation_price_of_the_underlying_asset: ""
   0073_Country_of_quotation_of_the_underlying_asset: ""
   0074_Economic_area_of_quotation_of_the_underlying_asset: ""
-  0075_Coupon_rate_of_the_underlying_asset: "0.026760000000000003"
+  0075_Coupon_rate_of_the_underlying_asset: 0.02676
   0076_Coupon_payment_frequency_of_the_underlying_asset: ""
   0077_Maturity_date_of_the_underlying_asset: "2035-11-21"
   0078_Redemption_profile_of_the_underlying_asset: ""
@@ -18378,7 +18378,7 @@
   0072_Last_valuation_price_of_the_underlying_asset: ""
   0073_Country_of_quotation_of_the_underlying_asset: ""
   0074_Economic_area_of_quotation_of_the_underlying_asset: ""
-  0075_Coupon_rate_of_the_underlying_asset: "0.026760000000000003"
+  0075_Coupon_rate_of_the_underlying_asset: 0.02676
   0076_Coupon_payment_frequency_of_the_underlying_asset: ""
   0077_Maturity_date_of_the_underlying_asset: "2036-02-11"
   0078_Redemption_profile_of_the_underlying_asset: ""
@@ -18521,7 +18521,7 @@
   0072_Last_valuation_price_of_the_underlying_asset: ""
   0073_Country_of_quotation_of_the_underlying_asset: ""
   0074_Economic_area_of_quotation_of_the_underlying_asset: ""
-  0075_Coupon_rate_of_the_underlying_asset: "0.026760000000000003"
+  0075_Coupon_rate_of_the_underlying_asset: 0.02676
   0076_Coupon_payment_frequency_of_the_underlying_asset: ""
   0077_Maturity_date_of_the_underlying_asset: "2036-01-28"
   0078_Redemption_profile_of_the_underlying_asset: ""
@@ -18664,7 +18664,7 @@
   0072_Last_valuation_price_of_the_underlying_asset: ""
   0073_Country_of_quotation_of_the_underlying_asset: ""
   0074_Economic_area_of_quotation_of_the_underlying_asset: ""
-  0075_Coupon_rate_of_the_underlying_asset: "0.026760000000000003"
+  0075_Coupon_rate_of_the_underlying_asset: 0.02676
   0076_Coupon_payment_frequency_of_the_underlying_asset: ""
   0077_Maturity_date_of_the_underlying_asset: "2036-06-10"
   0078_Redemption_profile_of_the_underlying_asset: ""
@@ -18807,7 +18807,7 @@
   0072_Last_valuation_price_of_the_underlying_asset: ""
   0073_Country_of_quotation_of_the_underlying_asset: ""
   0074_Economic_area_of_quotation_of_the_underlying_asset: ""
-  0075_Coupon_rate_of_the_underlying_asset: "0.026760000000000003"
+  0075_Coupon_rate_of_the_underlying_asset: 0.02676
   0076_Coupon_payment_frequency_of_the_underlying_asset: ""
   0077_Maturity_date_of_the_underlying_asset: "2036-09-01"
   0078_Redemption_profile_of_the_underlying_asset: ""
@@ -18950,7 +18950,7 @@
   0072_Last_valuation_price_of_the_underlying_asset: ""
   0073_Country_of_quotation_of_the_underlying_asset: ""
   0074_Economic_area_of_quotation_of_the_underlying_asset: ""
-  0075_Coupon_rate_of_the_underlying_asset: "0.026760000000000003"
+  0075_Coupon_rate_of_the_underlying_asset: 0.02676
   0076_Coupon_payment_frequency_of_the_underlying_asset: ""
   0077_Maturity_date_of_the_underlying_asset: "2036-02-25"
   0078_Redemption_profile_of_the_underlying_asset: ""
@@ -19093,7 +19093,7 @@
   0072_Last_valuation_price_of_the_underlying_asset: ""
   0073_Country_of_quotation_of_the_underlying_asset: ""
   0074_Economic_area_of_quotation_of_the_underlying_asset: ""
-  0075_Coupon_rate_of_the_underlying_asset: "0.026760000000000003"
+  0075_Coupon_rate_of_the_underlying_asset: 0.02676
   0076_Coupon_payment_frequency_of_the_underlying_asset: ""
   0077_Maturity_date_of_the_underlying_asset: "2036-04-29"
   0078_Redemption_profile_of_the_underlying_asset: ""
@@ -19236,7 +19236,7 @@
   0072_Last_valuation_price_of_the_underlying_asset: ""
   0073_Country_of_quotation_of_the_underlying_asset: ""
   0074_Economic_area_of_quotation_of_the_underlying_asset: ""
-  0075_Coupon_rate_of_the_underlying_asset: "0.022770000000000002"
+  0075_Coupon_rate_of_the_underlying_asset: 0.02277
   0076_Coupon_payment_frequency_of_the_underlying_asset: ""
   0077_Maturity_date_of_the_underlying_asset: "2031-03-06"
   0078_Redemption_profile_of_the_underlying_asset: ""
@@ -19379,7 +19379,7 @@
   0072_Last_valuation_price_of_the_underlying_asset: ""
   0073_Country_of_quotation_of_the_underlying_asset: ""
   0074_Economic_area_of_quotation_of_the_underlying_asset: ""
-  0075_Coupon_rate_of_the_underlying_asset: "0.026760000000000003"
+  0075_Coupon_rate_of_the_underlying_asset: 0.02676
   0076_Coupon_payment_frequency_of_the_underlying_asset: ""
   0077_Maturity_date_of_the_underlying_asset: "2036-06-16"
   0078_Redemption_profile_of_the_underlying_asset: ""
@@ -19522,7 +19522,7 @@
   0072_Last_valuation_price_of_the_underlying_asset: ""
   0073_Country_of_quotation_of_the_underlying_asset: ""
   0074_Economic_area_of_quotation_of_the_underlying_asset: ""
-  0075_Coupon_rate_of_the_underlying_asset: "0.026760000000000003"
+  0075_Coupon_rate_of_the_underlying_asset: 0.02676
   0076_Coupon_payment_frequency_of_the_underlying_asset: ""
   0077_Maturity_date_of_the_underlying_asset: "2036-03-06"
   0078_Redemption_profile_of_the_underlying_asset: ""
