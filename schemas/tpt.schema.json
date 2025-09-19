@@ -1,0 +1,848 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/tpt"
+    },
+    {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/tpt"
+      }
+    }
+  ],
+  "$defs": {
+    "currency": {
+      "type": ["string"],
+      "enum": [
+        "AED",
+        "AFN",
+        "ALL",
+        "AMD",
+        "ANG",
+        "AOA",
+        "ARS",
+        "AUD",
+        "AWG",
+        "AZN",
+        "BAM",
+        "BBD",
+        "BDT",
+        "BGN",
+        "BHD",
+        "BIF",
+        "BMD",
+        "BND",
+        "BOB",
+        "BOV",
+        "BRL",
+        "BSD",
+        "BTN",
+        "BWP",
+        "BYN",
+        "BZD",
+        "CAD",
+        "CDF",
+        "CHE",
+        "CHF",
+        "CHW",
+        "CLF",
+        "CLP",
+        "CNY",
+        "CNH",
+        "CNT",
+        "COP",
+        "COU",
+        "CRC",
+        "CUC",
+        "CUP",
+        "CVE",
+        "CZK",
+        "DJF",
+        "DKK",
+        "DOP",
+        "DZD",
+        "EGP",
+        "ERN",
+        "ETB",
+        "EUR",
+        "FJD",
+        "FKP",
+        "GBP",
+        "GEL",
+        "GHS",
+        "GIP",
+        "GMD",
+        "GNF",
+        "GTQ",
+        "GYD",
+        "HKD",
+        "HNL",
+        "HRK",
+        "HTG",
+        "HUF",
+        "IDR",
+        "ILS",
+        "INR",
+        "IQD",
+        "IRR",
+        "ISK",
+        "JMD",
+        "JOD",
+        "JPY",
+        "KES",
+        "KGS",
+        "KHR",
+        "KMF",
+        "KPW",
+        "KRW",
+        "KWD",
+        "KYD",
+        "KZT",
+        "LAK",
+        "LBP",
+        "LKR",
+        "LRD",
+        "LSL",
+        "LYD",
+        "MAD",
+        "MDL",
+        "MGA",
+        "MKD",
+        "MMK",
+        "MNT",
+        "MOP",
+        "MRU",
+        "MUR",
+        "MVR",
+        "MWK",
+        "MXN",
+        "MXV",
+        "MYR",
+        "MZN",
+        "NAD",
+        "NGN",
+        "NIO",
+        "NOK",
+        "NPR",
+        "NZD",
+        "OMR",
+        "PAB",
+        "PEN",
+        "PGK",
+        "PHP",
+        "PKR",
+        "PLN",
+        "PYG",
+        "QAR",
+        "RON",
+        "RSD",
+        "RUB",
+        "RWF",
+        "SAR",
+        "SBD",
+        "SCR",
+        "SDG",
+        "SEK",
+        "SGD",
+        "SHP",
+        "SLE",
+        "SLL",
+        "SOS",
+        "SRD",
+        "SSP",
+        "STN",
+        "SVC",
+        "SYP",
+        "SZL",
+        "THB",
+        "TJS",
+        "TMT",
+        "TND",
+        "TOP",
+        "TRY",
+        "TTD",
+        "TVD",
+        "TWD",
+        "TZS",
+        "UAH",
+        "UGX",
+        "USD",
+        "USN",
+        "UYI",
+        "UYU",
+        "UYW",
+        "UZS",
+        "VED",
+        "VES",
+        "VND",
+        "VUV",
+        "WST",
+        "XAF",
+        "XAG",
+        "XAU",
+        "XBA",
+        "XBB",
+        "XBC",
+        "XBD",
+        "XCD",
+        "XDR",
+        "XOF",
+        "XPD",
+        "XPF",
+        "XPT",
+        "XSU",
+        "XTS",
+        "XUA",
+        "XXX",
+        "YER",
+        "ZAR",
+        "ZMW",
+        "ZWL",
+        null,
+        ""
+      ]
+    },
+    "identification_code_type": {
+      "type": ["string", "number", "null"],
+      "enum": [
+        "ISIN",
+        "CUSIP",
+        "SEDOL",
+        "WKN",
+        "OTHER",
+        1,
+        2,
+        3,
+        4,
+        5,
+        99,
+        null,
+        ""
+      ]
+    },
+    "tpt": {
+      "type": "object",
+      "properties": {
+        "1000_TPT_Version": {
+          "description": "TPT Version",
+          "type": ["string"]
+        },
+        "0001_Portfolio_identifying_data": {
+          "description": "Identification of the fund or share class",
+          "type": ["string"]
+        },
+        "0002_Type_of_identification_code_for_the_fund_share_or_portfolio": {
+          "description": "Codification chosen to identify the share of the CIS",
+          "$ref": "#/$defs/identification_code_type"
+        },
+        "0003_Portfolio_name": {
+          "description": "Name of the Portfolio or name of the CIS",
+          "type": ["string"]
+        },
+        "0004_Portfolio_currency_(B)": {
+          "description": "Valuation currency of the portfolio",
+          "$ref": "#/$defs/currency"
+        },
+        "0005_Net_asset_valuation_of_the_portfolio_or_the_share_class_in_portfolio_currency": {
+          "description": "Portfolio valuation",
+          "type": ["number", "null"]
+        },
+        "0006_Valuation_date": {
+          "description": "Date of the portfolio valuation",
+          "type": ["string"]
+        },
+        "0007_Reporting_date": {
+          "description": "Date of the reporting",
+          "type": ["string"]
+        },
+        "0008_Share_price": {
+          "description": "Share price",
+          "type": ["number", "null"]
+        },
+        "0008b_Total_number_of_shares": {
+          "description": "Total number of shares",
+          "type": ["number", "null"]
+        },
+        "0009_Cash_ratio": {
+          "description": "Cash ratio",
+          "type": ["number", "null"]
+        },
+        "0010_Portfolio_modified_duration": {
+          "description": "Portfolio modified duration",
+          "type": ["number", "null"]
+        },
+        "0011_Complete_SCR_delivery": {
+          "description": "Complete SCR delivery",
+          "type": ["string"]
+        },
+        "0012_CIC_code_of_the_instrument": {
+          "description": "CIC code of the instrument",
+          "type": ["string"]
+        },
+        "0013_Economic_zone_of_the_quotation_place": {
+          "description": "Economic zone of the quotation place",
+          "type": ["string"]
+        },
+        "0014_Identification_code_of_the_instrument": {
+          "description": "Identification code of the instrument",
+          "type": ["string"]
+        },
+        "0015_Type_of_identification_code_for_the_instrument": {
+          "description": "Type of identification code for the instrument",
+          "$ref": "#/$defs/identification_code_type"
+        },
+        "0016_Grouping_code_for_multiple_leg_instruments": {
+          "description": "Grouping code for multiple leg instruments",
+          "type": ["string"]
+        },
+        "0017_Instrument_name": {
+          "description": "Instrument name",
+          "type": ["string"]
+        },
+        "0017b_Asset_liability": {
+          "description": "Asset liability",
+          "type": ["string"]
+        },
+        "0018_Quantity": {
+          "description": "Quantity",
+          "type": ["string"]
+        },
+        "0019_Nominal_amount": {
+          "description": "Nominal amount",
+          "type": ["number", "null"]
+        },
+        "0020_Contract_size_for_derivatives": {
+          "description": "Contract size for derivatives",
+          "type": ["string"]
+        },
+        "0021_Quotation_currency_(A)": {
+          "description": "Quotation currency of the instrument",
+          "$ref": "#/$defs/currency"
+        },
+        "0022_Market_valuation_in_quotation_currency_(A)": {
+          "description": "Market valuation in quotation currency",
+          "type": ["number", "null"]
+        },
+        "0023_Clean_market_valuation_in_quotation_currency_(A)": {
+          "description": "Clean market valuation in quotation currency",
+          "type": ["number", "null"]
+        },
+        "0024_Market_valuation_in_portfolio_currency_(B)": {
+          "description": "Market valuation in portfolio currency",
+          "type": ["number", "null"]
+        },
+        "0025_Clean_market_valuation_in_portfolio_currency_(B)": {
+          "description": "Clean market valuation in portfolio currency",
+          "type": ["number", "null"]
+        },
+        "0026_Valuation_weight": {
+          "description": "Valuation weight",
+          "type": ["number", "null"]
+        },
+        "0027_Market_exposure_amount_in_quotation_currency_(A)": {
+          "description": "Market exposure amount in quotation currency",
+          "type": ["number", "null"]
+        },
+        "0028_Market_exposure_amount_in_portfolio_currency_(B)": {
+          "description": "Market exposure amount in portfolio currency",
+          "type": ["number", "null"]
+        },
+        "0029_Market_exposure_amount_for_the_3rd_quotation_currency_(C)": {
+          "description": "Market exposure amount for the 3rd quotation currency",
+          "type": ["string", "number", "null"]
+        },
+        "0030_Market_exposure_in_weight": {
+          "description": "Market exposure in weight",
+          "type": ["number", "null"]
+        },
+        "0031_Market_exposure_for_the_3rd_currency_in_weight_over_NAV": {
+          "description": "Market exposure for the 3rd currency in weight over NAV",
+          "type": ["string", "number", "null"]
+        },
+        "0032_Interest_rate_type": {
+          "description": "Interest rate type",
+          "type": ["string"]
+        },
+        "0033_Coupon_rate": {
+          "description": "Coupon rate",
+          "type": ["string", "number", "null"]
+        },
+        "0034_Interest_rate_reference_identification": {
+          "description": "Interest rate reference identification",
+          "type": ["string"]
+        },
+        "0035_Identification_type_for_interest_rate_index": {
+          "description": "Identification type for interest rate index",
+          "type": ["string"]
+        },
+        "0036_Interest_rate_index_name": {
+          "description": "Interest rate index name",
+          "type": ["string"]
+        },
+        "0037_Interest_rate_margin": {
+          "description": "Interest rate margin",
+          "type": ["string", "number", "null"]
+        },
+        "0038_Coupon_payment_frequency": {
+          "description": "Coupon payment frequency",
+          "type": ["string", "number", "null"]
+        },
+        "0039_Maturity_date": {
+          "description": "Maturity date",
+          "type": ["string"]
+        },
+        "0040_Redemption_type": {
+          "description": "Redemption type",
+          "type": ["string"]
+        },
+        "0041_Redemption_rate": {
+          "description": "Redemption rate",
+          "type": ["string", "number", "null"]
+        },
+        "0042_Callable_putable": {
+          "description": "Callable putable",
+          "type": ["string"]
+        },
+        "0043_Call_put_date": {
+          "description": "Call put date",
+          "type": ["string"]
+        },
+        "0044_Issuer_bearer_option_exercise": {
+          "description": "Issuer bearer option exercise",
+          "type": ["string"]
+        },
+        "0045_Strike_price_for_embedded_(call_put)_options": {
+          "description": "Strike price for embedded options",
+          "type": ["string", "number", "null"]
+        },
+        "0046_Issuer_name": {
+          "description": "Issuer name",
+          "type": ["string"]
+        },
+        "0047_Issuer_identification_code": {
+          "description": "Issuer identification code",
+          "type": ["string"]
+        },
+        "0048_Type_of_identification_code_for_issuer": {
+          "description": "Type of identification code for issuer",
+          "$ref": "#/$defs/identification_code_type"
+        },
+        "0049_Name_of_the_group_of_the_issuer": {
+          "description": "Name of the group of the issuer",
+          "type": ["string"]
+        },
+        "0050_Identification_of_the_group": {
+          "description": "Identification of the group",
+          "type": ["string"]
+        },
+        "0051_Type_of_identification_code_for_issuer_group": {
+          "description": "Type of identification code for issuer group",
+          "$ref": "#/$defs/identification_code_type"
+        },
+        "0052_Issuer_country": {
+          "description": "Issuer country",
+          "type": ["string"]
+        },
+        "0053_Issuer_economic_area": {
+          "description": "Issuer economic area",
+          "type": ["number", "null"]
+        },
+        "0054_Economic_sector": {
+          "description": "Economic sector",
+          "type": ["string"]
+        },
+        "0055_Covered_not_covered": {
+          "description": "Covered not covered",
+          "type": ["string"]
+        },
+        "0056_Securitisation": {
+          "description": "Securitisation",
+          "type": ["string"]
+        },
+        "0057_Explicit_guarantee_by_the_country_of_issue": {
+          "description": "Explicit guarantee by the country of issue",
+          "type": ["string"]
+        },
+        "0058_Subordinated_debt": {
+          "description": "Subordinated debt",
+          "type": ["string"]
+        },
+        "0058b_Nature_of_the_tranche": {
+          "description": "Nature of the tranche",
+          "type": ["string"]
+        },
+        "0059_Credit_quality_step": {
+          "description": "Credit quality step",
+          "type": ["number", "null"]
+        },
+        "0060_Call_Put_Cap_Floor": {
+          "description": "Call Put Cap Floor",
+          "type": ["string"]
+        },
+        "0061_Strike_price": {
+          "description": "Strike price",
+          "type": ["string", "number", "null"]
+        },
+        "0062_Conversion_factor_(convertibles)_concordance_factor_parity_(options)": {
+          "description": "Conversion factor",
+          "type": ["string", "number", "null"]
+        },
+        "0063_Effective_date_of_instrument": {
+          "description": "Effective date of instrument",
+          "type": ["string"]
+        },
+        "0064_Exercise_type": {
+          "description": "Exercise type",
+          "type": ["string"]
+        },
+        "0065_Hedging_rolling": {
+          "description": "Hedging rolling",
+          "type": ["string"]
+        },
+        "0067_CIC_of_the_underlying_asset": {
+          "description": "CIC of the underlying asset",
+          "type": ["string"]
+        },
+        "0068_Identification_code_of_the_underlying_asset": {
+          "description": "Identification code of the underlying asset",
+          "type": ["string"]
+        },
+        "0069_Type_of_identification_code_for_the_underlying_asset": {
+          "description": "Type of identification code for the underlying asset",
+          "type": ["string", "number"]
+        },
+        "0070_Name_of_the_underlying_asset": {
+          "description": "Name of the underlying asset",
+          "type": ["string"]
+        },
+        "0071_Quotation_currency_of_the_underlying_asset_(C)": {
+          "description": "Quotation currency of the underlying asset",
+          "type": ["string"]
+        },
+        "0072_Last_valuation_price_of_the_underlying_asset": {
+          "description": "Last valuation price of the underlying asset",
+          "type": ["string", "number", "null"]
+        },
+        "0073_Country_of_quotation_of_the_underlying_asset": {
+          "description": "Country of quotation of the underlying asset",
+          "type": ["string"]
+        },
+        "0074_Economic_area_of_quotation_of_the_underlying_asset": {
+          "description": "Economic area of quotation of the underlying asset",
+          "type": ["string"]
+        },
+        "0075_Coupon_rate_of_the_underlying_asset": {
+          "description": "Coupon rate of the underlying asset",
+          "type": ["string", "number", "null"]
+        },
+        "0076_Coupon_payment_frequency_of_the_underlying_asset": {
+          "description": "Coupon payment frequency of the underlying asset",
+          "type": ["string", "number", "null"]
+        },
+        "0077_Maturity_date_of_the_underlying_asset": {
+          "description": "Maturity date of the underlying asset",
+          "type": ["string"]
+        },
+        "0078_Redemption_profile_of_the_underlying_asset": {
+          "description": "Redemption profile of the underlying asset",
+          "type": ["string"]
+        },
+        "0079_Redemption_rate_of_the_underlying_asset": {
+          "description": "Redemption rate of the underlying asset",
+          "type": ["string", "number", "null"]
+        },
+        "0080_Issuer_name_of_the_underlying_asset": {
+          "description": "Issuer name of the underlying asset",
+          "type": ["string"]
+        },
+        "0081_Issuer_identification_code_of_the_underlying_asset": {
+          "description": "Issuer identification code of the underlying asset",
+          "type": ["string"]
+        },
+        "0082_Type_of_issuer_identification_code_of_the_underlying_asset": {
+          "description": "Type of issuer identification code of the underlying asset",
+          "type": ["string"]
+        },
+        "0083_Name_of_the_group_of_the_issuer_of_the_underlying_asset": {
+          "description": "Name of the group of the issuer of the underlying asset",
+          "type": ["string"]
+        },
+        "0084_Identification_of_the_group_of_the_underlying_asset": {
+          "description": "Identification of the group of the underlying asset",
+          "type": ["string"]
+        },
+        "0085_Type_of_the_group_identification_code_of_the_underlying_asset": {
+          "description": "Type of the group identification code of the underlying asset",
+          "type": ["string"]
+        },
+        "0086_Issuer_country_of_the_underlying_asset": {
+          "description": "Issuer country of the underlying asset",
+          "type": ["string"]
+        },
+        "0087_Issuer_economic_area_of_the_underlying_asset": {
+          "description": "Issuer economic area of the underlying asset",
+          "type": ["string"]
+        },
+        "0088_Explicit_guarantee_by_the_country_of_issue_of_the_underlying_asset": {
+          "description": "Explicit guarantee by the country of issue of the underlying asset",
+          "type": ["string"]
+        },
+        "0089_Credit_quality_step_of_the_underlying_asset": {
+          "description": "Credit quality step of the underlying asset",
+          "type": ["string"]
+        },
+        "0090_Modified_duration_to_maturity_date": {
+          "description": "Modified duration to maturity date",
+          "type": ["string", "number", "null"]
+        },
+        "0091_Modified_duration_to_next_option_exercise_date": {
+          "description": "Modified duration to next option exercise date",
+          "type": ["string", "number", "null"]
+        },
+        "0092_Credit_sensitivity": {
+          "description": "Credit sensitivity",
+          "type": ["string", "number", "null"]
+        },
+        "0093_Sensitivity_to_underlying_asset_price_(delta)": {
+          "description": "Sensitivity to underlying asset price (delta)",
+          "type": ["string", "number", "null"]
+        },
+        "0094_Convexity_gamma_for_derivatives": {
+          "description": "Convexity gamma for derivatives",
+          "type": ["string", "number", "null"]
+        },
+        "0094b_Vega": {
+          "description": "Vega",
+          "type": ["string", "number", "null"]
+        },
+        "0095_Identification_of_the_original_portfolio_for_positions_embedded_in_a_fund": {
+          "description": "Identification of the original portfolio for positions embedded in a fund",
+          "type": ["string"]
+        },
+        "0097_SCR_mrkt_IR_up_weight_over_NAV": {
+          "description": "SCR market interest rate up weight over NAV",
+          "type": ["string", "number", "null"]
+        },
+        "0098_SCR_mrkt_IR_down_weight_over_NAV": {
+          "description": "SCR market interest rate down weight over NAV",
+          "type": ["string", "number", "null"]
+        },
+        "0099_SCR_mrkt_eq_type1_weight_over_NAV": {
+          "description": "SCR market equity type 1 weight over NAV",
+          "type": ["string", "number", "null"]
+        },
+        "0100_SCR_mrkt_eq_type2_weight_over_NAV": {
+          "description": "SCR market equity type 2 weight over NAV",
+          "type": ["string", "number", "null"]
+        },
+        "0101_SCR_mrkt_prop_weight_over_NAV": {
+          "description": "SCR market property weight over NAV",
+          "type": ["string", "number", "null"]
+        },
+        "0102_SCR_mrkt_spread_bonds_weight_over_NAV": {
+          "description": "SCR market spread bonds weight over NAV",
+          "type": ["string", "number", "null"]
+        },
+        "0103_SCR_mrkt_spread_structured_weight_over_NAV": {
+          "description": "SCR market spread structured weight over NAV",
+          "type": ["string", "number", "null"]
+        },
+        "0104_SCR_mrkt_spread_derivatives_up_weight_over_NAV": {
+          "description": "SCR market spread derivatives up weight over NAV",
+          "type": ["string", "number", "null"]
+        },
+        "0105_SCR_mrkt_spread_derivatives_down_weight_over_NAV": {
+          "description": "SCR market spread derivatives down weight over NAV",
+          "type": ["string", "number", "null"]
+        },
+        "0105a_SCR_mrkt_FX_up_weight_over_NAV": {
+          "description": "SCR market FX up weight over NAV",
+          "type": ["string", "number", "null"]
+        },
+        "0105b_SCR_mrkt_FX_down_weight_over_NAV": {
+          "description": "SCR market FX down weight over NAV",
+          "type": ["string", "number", "null"]
+        },
+        "0106_Asset_pledged_as_collateral": {
+          "description": "Asset pledged as collateral",
+          "type": ["string"]
+        },
+        "0107_Place_of_deposit": {
+          "description": "Place of deposit",
+          "type": ["string"]
+        },
+        "0108_Participation": {
+          "description": "Participation",
+          "type": ["string"]
+        },
+        "0110_Valorisation_method": {
+          "description": "Valorisation method",
+          "type": ["string"]
+        },
+        "0111_Value_of_acquisition": {
+          "description": "Value of acquisition",
+          "type": ["string"]
+        },
+        "0112_Credit_rating": {
+          "description": "Credit rating",
+          "type": ["string"]
+        },
+        "0113_Rating_agency": {
+          "description": "Rating agency",
+          "type": ["string"]
+        },
+        "0114_Issuer_economic_area": {
+          "description": "Issuer economic area",
+          "type": ["string"]
+        },
+        "0115_Fund_issuer_code": {
+          "description": "Fund issuer code",
+          "type": ["string"]
+        },
+        "0116_Fund_issuer_code_type": {
+          "description": "Fund issuer code type",
+          "type": ["number", "null"]
+        },
+        "0117_Fund_issuer_name": {
+          "description": "Fund issuer name",
+          "type": ["string"]
+        },
+        "0118_Fund_issuer_sector": {
+          "description": "Fund issuer sector",
+          "type": ["string"]
+        },
+        "0119_Fund_issuer_group_code": {
+          "description": "Fund issuer group code",
+          "type": ["string"]
+        },
+        "0120_Fund_issuer_group_code_type": {
+          "description": "Fund issuer group code type",
+          "type": ["number", "null"]
+        },
+        "0121_Fund_issuer_group_name": {
+          "description": "Fund issuer group name",
+          "type": ["string"]
+        },
+        "0122_Fund_issuer_country": {
+          "description": "Fund issuer country",
+          "type": ["string"]
+        },
+        "0123_Fund_CIC": {
+          "description": "Fund CIC",
+          "type": ["string"]
+        },
+        "0123a_Fund_custodian_country": {
+          "description": "Fund custodian country",
+          "type": ["string"]
+        },
+        "0124_Duration": {
+          "description": "Duration",
+          "type": ["number", "null"]
+        },
+        "0125_Accrued_income_(Security Denominated Currency)": {
+          "description": "Accrued income in security denominated currency",
+          "type": ["string", "number", "null"]
+        },
+        "0126_Accrued_income_(Portfolio Denominated Currency)": {
+          "description": "Accrued income in portfolio denominated currency",
+          "type": ["string", "number", "null"]
+        },
+        "0127_Bond_floor_(convertible_instrument_only)": {
+          "description": "Bond floor for convertible instrument only",
+          "type": ["string"]
+        },
+        "0128_Option_premium_(convertible_instrument_only)": {
+          "description": "Option premium for convertible instrument only",
+          "type": ["string"]
+        },
+        "0129_Valuation_yield": {
+          "description": "Valuation yield",
+          "type": ["string"]
+        },
+        "0130_Valuation_z_spread": {
+          "description": "Valuation z spread",
+          "type": ["string"]
+        },
+        "0131_Underlying_asset_category": {
+          "description": "Underlying asset category",
+          "type": ["string"]
+        },
+        "0132_Infrastructure_investment": {
+          "description": "Infrastructure investment",
+          "type": ["string"]
+        },
+        "0133_custodian_name": {
+          "description": "Custodian name",
+          "type": ["string"]
+        },
+        "0134_type1_private_equity_portfolio_eligibility": {
+          "description": "Type 1 private equity portfolio eligibility",
+          "type": ["string"]
+        },
+        "0135_type1_private_equity_issuer_beta": {
+          "description": "Type 1 private equity issuer beta",
+          "type": ["string"]
+        },
+        "0137_Counterparty_sector": {
+          "description": "Counterparty sector",
+          "type": ["string"]
+        },
+        "0138_Collateral_eligibility": {
+          "description": "Collateral eligibility",
+          "type": ["string"]
+        },
+        "0139_Collateral_Market_valuation_in_portfolio_currency": {
+          "description": "Collateral market valuation in portfolio currency",
+          "type": ["string"]
+        }
+      },
+      "required": [
+        "0001_Portfolio_identifying_data",
+        "0002_Type_of_identification_code_for_the_fund_share_or_portfolio",
+        "0003_Portfolio_name",
+        "0004_Portfolio_currency_(B)",
+        "0005_Net_asset_valuation_of_the_portfolio_or_the_share_class_in_portfolio_currency",
+        "0006_Valuation_date",
+        "0007_Reporting_date",
+        "0008_Share_price",
+        "0008b_Total_number_of_shares",
+        "0009_Cash_ratio",
+        "0010_Portfolio_modified_duration",
+        "0011_Complete_SCR_delivery",
+        "0012_CIC_code_of_the_instrument",
+        "0014_Identification_code_of_the_instrument",
+        "0015_Type_of_identification_code_for_the_instrument",
+        "0017_Instrument_name",
+        "0019_Nominal_amount",
+        "0021_Quotation_currency_(A)",
+        "0022_Market_valuation_in_quotation_currency_(A)",
+        "0023_Clean_market_valuation_in_quotation_currency_(A)",
+        "0024_Market_valuation_in_portfolio_currency_(B)",
+        "0025_Clean_market_valuation_in_portfolio_currency_(B)",
+        "0026_Valuation_weight",
+        "0027_Market_exposure_amount_in_quotation_currency_(A)",
+        "0028_Market_exposure_amount_in_portfolio_currency_(B)",
+        "0030_Market_exposure_in_weight",
+        "0032_Interest_rate_type",
+        "0033_Coupon_rate",
+        "0038_Coupon_payment_frequency",
+        "0039_Maturity_date",
+        "0040_Redemption_type",
+        "0041_Redemption_rate",
+        "0046_Issuer_name",
+        "0047_Issuer_identification_code",
+        "0048_Type_of_identification_code_for_issuer",
+        "0052_Issuer_country",
+        "0053_Issuer_economic_area",
+        "0054_Economic_sector",
+        "0055_Covered_not_covered",
+        "0059_Credit_quality_step",
+        "0063_Effective_date_of_instrument",
+        "0090_Modified_duration_to_maturity_date",
+        "0092_Credit_sensitivity"
+      ],
+      "additionalProperties": true
+    }
+  }
+}
