@@ -1,27 +1,27 @@
 {
-  "cSpell.words": [
-    "Autocall",
-    "Autocallable",
-    "datetime",
-    "Favourable",
-    "findatex",
-    "KIID",
-    "PRIIP",
-    "Priips",
-    "SRRI",
-    "synchronised",
-    "UCITS",
-    "UKPRIIP",
-    "Unfavourable"
-  ],
   "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "json.schemas": [
     {
       "fileMatch": ["findatex-ept*.json"],
       "url": "./schemas/ept.schema.json"
+    },
+    {
+      "fileMatch": ["*_TPTV6_*.json"],
+      "url": "./schemas/tpt.schema.json"
     }
   ],
   "yaml.schemas": {
-    "schemas/ept.schema.json": ["findatex-ept*.yaml"]
+    "schemas/ept.schema.json": ["findatex-ept*.yaml"],
+    "schemas/tpt.schema.json": ["*_TPTV6_*.yaml"]
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
