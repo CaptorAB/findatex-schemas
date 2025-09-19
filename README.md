@@ -61,6 +61,16 @@ eptYaml2excel findatex-ept-captor-2023-12-29.yaml
 eptValidate findatex-ept-captor-2023-12-29.yaml
 ```
 
+## testing
+
+There are some tests that validates the files in examples dir against their schemas.
+
+Run the tests by running:
+
+```bash
+npm test
+```
+
 ## Contributions
 
 Feel free to report bugs and submit pull requests
