@@ -1,0 +1,1666 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "oneOf": [
+    {
+      "$ref": "#/components/schemas/tpt"
+    },
+    {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/tpt"
+      }
+    }
+  ],
+  "components": {
+    "schemas": {
+      "currency": {
+        "description": "ISO 4217 currency codes for valuation and quotation currencies. Includes standard ISO codes plus special cases like CNH (Chinese yuan offshore), CNT (Chinese yuan Taiwan), GGP (Guernsey pound), IMP (Isle of Man pound), JEP (Jersey pound), KID (Kiribati dollar), NIS (New Israeli Shekel), PRB (Transnistrian ruble), and TVD (Tuvalu dollar).",
+        "type": ["string"],
+        "enum": [
+          "AED",
+          "AFN",
+          "ALL",
+          "AMD",
+          "ANG",
+          "AOA",
+          "ARS",
+          "AUD",
+          "AWG",
+          "AZN",
+          "BAM",
+          "BBD",
+          "BDT",
+          "BGN",
+          "BHD",
+          "BIF",
+          "BMD",
+          "BND",
+          "BOB",
+          "BOV",
+          "BRL",
+          "BSD",
+          "BTN",
+          "BWP",
+          "BYN",
+          "BZD",
+          "CAD",
+          "CDF",
+          "CHE",
+          "CHF",
+          "CHW",
+          "CLF",
+          "CLP",
+          "CNY",
+          "CNH",
+          "CNT",
+          "COP",
+          "COU",
+          "CRC",
+          "CUC",
+          "CUP",
+          "CVE",
+          "CZK",
+          "DJF",
+          "DKK",
+          "DOP",
+          "DZD",
+          "EGP",
+          "ERN",
+          "ETB",
+          "EUR",
+          "FJD",
+          "FKP",
+          "GBP",
+          "GEL",
+          "GHS",
+          "GIP",
+          "GMD",
+          "GNF",
+          "GTQ",
+          "GYD",
+          "HKD",
+          "HNL",
+          "HRK",
+          "HTG",
+          "HUF",
+          "IDR",
+          "ILS",
+          "INR",
+          "IQD",
+          "IRR",
+          "ISK",
+          "JMD",
+          "JOD",
+          "JPY",
+          "KES",
+          "KGS",
+          "KHR",
+          "KMF",
+          "KPW",
+          "KRW",
+          "KWD",
+          "KYD",
+          "KZT",
+          "LAK",
+          "LBP",
+          "LKR",
+          "LRD",
+          "LSL",
+          "LYD",
+          "MAD",
+          "MDL",
+          "MGA",
+          "MKD",
+          "MMK",
+          "MNT",
+          "MOP",
+          "MRU",
+          "MUR",
+          "MVR",
+          "MWK",
+          "MXN",
+          "MXV",
+          "MYR",
+          "MZN",
+          "NAD",
+          "NGN",
+          "NIO",
+          "NOK",
+          "NPR",
+          "NZD",
+          "OMR",
+          "PAB",
+          "PEN",
+          "PGK",
+          "PHP",
+          "PKR",
+          "PLN",
+          "PYG",
+          "QAR",
+          "RON",
+          "RSD",
+          "RUB",
+          "RWF",
+          "SAR",
+          "SBD",
+          "SCR",
+          "SDG",
+          "SEK",
+          "SGD",
+          "SHP",
+          "SLE",
+          "SLL",
+          "SOS",
+          "SRD",
+          "SSP",
+          "STN",
+          "SVC",
+          "SYP",
+          "SZL",
+          "THB",
+          "TJS",
+          "TMT",
+          "TND",
+          "TOP",
+          "TRY",
+          "TTD",
+          "TVD",
+          "TWD",
+          "TZS",
+          "UAH",
+          "UGX",
+          "USD",
+          "USN",
+          "UYI",
+          "UYU",
+          "UYW",
+          "UZS",
+          "VED",
+          "VES",
+          "VND",
+          "VUV",
+          "WST",
+          "XAF",
+          "XAG",
+          "XAU",
+          "XBA",
+          "XBB",
+          "XBC",
+          "XBD",
+          "XCD",
+          "XDR",
+          "XOF",
+          "XPD",
+          "XPF",
+          "XPT",
+          "XSU",
+          "XTS",
+          "XUA",
+          "XXX",
+          "YER",
+          "ZAR",
+          "ZMW",
+          "ZWL",
+          null,
+          ""
+        ]
+      },
+      "identification_code_type": {
+        "description": "Type of identification code used for financial instruments. Closed list from QRT Log issued by EIOPA July 2015, modified to add LEI in 2019. Used for OTC derivatives per MiFID II requirements.",
+        "type": ["string", "number", "null"],
+        "enum": [
+          "ISIN",
+          "CUSIP",
+          "SEDOL",
+          "WKN",
+          "OTHER",
+          1,
+          2,
+          3,
+          4,
+          5,
+          9,
+          99,
+          null,
+          ""
+        ]
+      },
+      "economic_zone": {
+        "description": "Economic zone classification for quotation places and issuers. Integer values: 0 = non-listed, 1 = EEA, 2 = OECD exclude EEA, 3 = Rest of the World. Optional if CIC code is provided as economic zone can be mapped from first two positions of CIC.",
+        "type": ["integer", "string", "null"],
+        "enum": [0, 1, 2, 3, null, ""]
+      },
+      "yes_no": {
+        "description": "Simple yes/no indicator field. Alpha(1) format with Y = yes, N = no.",
+        "type": "string",
+        "enum": ["", "Y", "N"]
+      },
+      "yes_no_epm": {
+        "description": "Extended yes/no indicator for hedging and risk mitigation purposes. Y = used for Risk Mitigation purpose with systematic roll before maturity, N = used for hedging purpose but no systematic roll before maturity, EPM = Efficient Portfolio Management / not used for hedging purpose.",
+        "type": "string",
+        "enum": ["", "Y", "N", "EPM"]
+      },
+      "call_put_cap_floor": {
+        "description": "Option characteristics for embedded options in bonds or standalone options. Cal = Call, Put = Put, Cap = Cap, Flr = Floor, empty if none. Alpha(3) format.",
+        "type": "string",
+        "enum": ["Cal", "Put", "Cap", "Flr", ""]
+      },
+      "exercise_type": {
+        "description": "Option exercise style classification. AM = American, EU = European, AS = Asian, BE = Bermudian. Alpha(2) format.",
+        "type": "string",
+        "enum": ["", "AM", "EU", "AS", "BE"]
+      },
+      "issuer_bearer_option": {
+        "description": "Option exercise rights holder classification. I = Issuer, B = Bearer, O = Both. Alpha(1) format.",
+        "type": "string",
+        "enum": ["", "I", "B", "O"]
+      },
+      "covered_not_covered": {
+        "description": "Coverage status for mortgage covered bonds and public sector covered bonds per UCITS directive 85/611/EEC art 22. C = Covered, NC = Non Covered. Alpha(2) format.",
+        "type": "string",
+        "enum": ["C", "NC", ""]
+      },
+      "interest_rate_type": {
+        "description": "Interest rate structure classification. Fixed = plain vanilla fixed coupon rate, Floating = plain vanilla floating coupon rates (referring to reference rates like EONIA or Libor), Variable = other variable interest rates like step-up/step-down or fixed-to-float bonds, Inflation_linked = inflation linked bonds.",
+        "type": "string",
+        "enum": ["Fixed", "Floating", "Variable", "Inflation_linked", ""]
+      },
+      "redemption_type": {
+        "description": "Redemption payment schedule type. Bullet = single payment at maturity, Sinkable = gradual redemption over time, defaulted = in default status, empty if not applicable.",
+        "type": "string",
+        "enum": ["Bullet", "Sinkable", "defaulted", ""]
+      },
+      "credit_quality_step": {
+        "description": "Credit quality step as defined by Solvency II regulation. Integer values: 0-6 = Credit quality steps 0-6, 9 = No rating available. Based on CEBS Standardised Approach convention and article 109a(1) of Directive 2009/138/EC.",
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          },
+          {
+            "$ref": "#/components/schemas/empty_string"
+          }
+        ],
+        "enum": [0, 1, 2, 3, 4, 5, 6, 9, null, ""]
+      },
+      "coupon_payment_frequency": {
+        "description": "Number of coupon payments per year. 0 = other than standard options, 1 = annual, 2 = biannual, 4 = quarterly, 12 = monthly, 52 = weekly. For OTC derivatives this is the frequency of payment (or receipt) of coupons/interest.",
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          },
+          {
+            "$ref": "#/components/schemas/empty_string"
+          }
+        ],
+        "enum": [0, 1, 2, 4, 12, 52, null, ""]
+      },
+      "asset_pledged_collateral": {
+        "description": "Asset collateral status classification per S06.02 QRT template. 1 = Assets in balance sheet that are collateral pledged, 2 = Collateral for reinsurance accepted, 3 = Collateral for securities borrowed, 4 = Repos, 9 = Not collateral.",
+        "type": "string",
+        "enum": ["", "1", "2", "3", "4", "9"]
+      },
+      "valuation_method": {
+        "description": "Asset valuation method classification per QRT specifications. 1 = quoted market price in active markets for same assets, 2 = quoted market price in active markets for similar assets, 3 = alternative valuation methods, 4 = adjusted equity methods (for participations), 5 = IFRS equity methods (for participations), 6 = Market valuation per Article 9(4) of Delegated Regulation 2015/35.",
+        "type": "string",
+        "enum": ["", "1", "2", "3", "4", "5", "6"]
+      },
+      "underlying_asset_category": {
+        "description": "SII definition per QRT S.06.03 template specification. 1 = Government bonds, 2 = Corporate bonds, 3L = Listed equity, 3X = Unlisted equity, 4 = Collective Investment Undertakings, 5 = Structured notes, 6 = Collateralised securities, 7 = Cash and deposits, 8 = Mortgages and loans, 9 = Properties, 0 = Other investments, A = Futures, B = Call Options, C = Put Options, D = Swaps, E = Forwards, F = Credit derivatives, L = Liabilities.",
+        "type": "string",
+        "enum": [
+          "1",
+          "2",
+          "3L",
+          "3X",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "0",
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "L",
+          ""
+        ]
+      },
+      "infrastructure_investment": {
+        "description": "Infrastructure investment classification per Commission Delegated Regulations (EU) 2016/467 and 2017/1542. 0 = Not assessed, 1 = Debt on eligible Infrastructure project, 2 = Equity on eligible infrastructure project, 3 = Debt on eligible Infrastructure corporate, 4 = Equity on eligible infrastructure corporate, 5 = Non eligible.",
+        "type": "string",
+        "enum": ["", "0", "1", "2", "3", "4", "5"]
+      },
+      "securitisation": {
+        "description": "Securitisation typology classification per regulation 2018/1221. a = not assessed eligibility under Solvency II, b = Senior STS (art 178(3) and 178(5)), c = Junior STS (art 178(4) and 178(6)), d = re-securitisation (art 178(7)), e = non STS (art 178(8) and 178(9)), f = transitional regime type 1 without new underlying exposure since 01/01/2019 (art 178a(1) & (2)), g = transitional regime type 1 residential mortgages (art 178a(3)), h = transitional regime type 1 residential mortgages (art 178a(4)), i = EIB/EIF secured securitisation (art 180(10) and 180(10a)), j = not considered securitisation under Solvency 2.",
+        "type": "string",
+        "enum": ["", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
+      },
+      "counterparty_sector": {
+        "description": "Counterparty sector classification per IORP II regulation based on FINREP breakdown (ESA 2010) and EIOPA specifications. 1 = central bank (S.121), 2 = deposit-taking corporations except central bank (S.122), 3 = money market funds (S.123), 4 = investment funds other than money market funds (S.124), 5 = other financial intermediaries except insurance/pension funds (S.125 excluding FVCs + S.126 + S.127), 6 = financial vehicle corporations engaged in securitisation (S.125 subdivision), 7 = insurance corporations (S.128), 8 = pension funds (S.129), 9 = non-financial corporations (S.11), 10 = general government (S.13), 11 = households and non-profit institutions (S.14 + S.15), 12 = for cash & deposit only: central bank, deposit-taking corporations, money market funds, 13 = for cash & deposit only: non-MFIs not included under 12.",
+        "type": "string",
+        "enum": [
+          "",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13"
+        ]
+      },
+      "collateral_eligibility": {
+        "description": "Collateral eligibility classification per Solvency regulation (RD UE 2015/35 art 176.5 and related art 197, art 214). 0 = Not assessed or no collateral, 1 = Compliant with art 214 and art 197.1a and art 197.1b, 2 = Compliant with art 214 and art 197.1a, 3 = Compliant with art 214, 4 = Not eligible.",
+        "type": "string",
+        "enum": ["", "0", "1", "2", "3", "4"]
+      },
+      "type1_private_equity_eligibility": {
+        "description": "Private equity eligibility for art 168a of regulation UE DR 2019/981. 0 = Not assessed, 1 = eligible for re-classification as equity type 1, 2 = not eligible for re-classification as equity type 1. Assessment based on criteria in art 168a of Commission Delegated Regulation (EU) 2019/981.",
+        "type": "string",
+        "enum": ["", "0", "1", "2"]
+      },
+      "participation": {
+        "description": "Participation guidelines indicator for accountancy terms per S06.02 QRT reports. 1 = Participation, 2 = non participation.",
+        "type": "string",
+        "enum": ["", "1", "2"]
+      },
+      "cic_code": {
+        "description": "Complementary Identification Code (CIC) - 4-character alphanumeric code used to classify assets per Annex V CIC Table. Allows determination of type and country of main codification, S2 type and subtype of instrument. Undertakings must consider most representative risk to which asset is exposed.",
+        "type": "string",
+        "anyOf": [
+          {
+            "pattern": "^[A-Z0-9]{4}$"
+          },
+          {
+            "$ref": "#/components/schemas/empty_string"
+          }
+        ]
+      },
+      "lei_code": {
+        "description": "Legal Entity Identifier (LEI) - 20-character alphanumeric code per ISO 17442 standard. Used for unique identification of legal entities participating in financial transactions.",
+        "type": "string",
+        "pattern": "^[A-Z0-9]{20}$"
+      },
+      "iso_date": {
+        "description": "ISO 8601 date format (YYYY-MM-DD) for all date fields including valuation dates, maturity dates, and reporting dates.",
+        "type": "string",
+        "anyOf": [
+          {
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+          },
+          {
+            "$ref": "#/components/schemas/empty_string"
+          }
+        ]
+      },
+      "iso_country_code": {
+        "description": "ISO 3166-1 alpha-2 country code for issuer countries, quotation countries, and other geographic classifications. Two-letter uppercase country codes.",
+        "type": "string",
+        "anyOf": [
+          {
+            "pattern": "^[A-Z]{2}$"
+          },
+          {
+            "$ref": "#/components/schemas/empty_string"
+          }
+        ]
+      },
+      "nace_code": {
+        "description": "NACE (Nomenclature statistique des activités économiques) economic sector classification. Full 5-character version for category K (financial sector), single letter for non-financial sectors per EIOPA documentation.",
+        "type": "string"
+      },
+      "empty_string": {
+        "description": "Empty string type for fields that can accept empty string values",
+        "type": "string",
+        "maxLength": 0,
+        "minLength": 0
+      },
+      "tpt": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "1000_TPT_Version": {
+            "description": "TPT Published Version\n\nV2.0 (official); dated 9 January 2015\nV3.0 (official) dated 12 October 2015\nV4.0 (official) dated 13 February 2018\nV5.0 (official) dated 16 January 2020\nV6.0 (official) dated 10 January 2022",
+            "type": "string",
+            "maxLength": 255
+          },
+          "1_Portfolio_identifying_data": {
+            "description": "Identification of the fund or share class\n\nUse the following priority:\n  - ISO 6166 code of ISIN when available\n  - Other recognised codes (e.g.: CUSIP, Bloomberg Ticker, Reuters RIC)\n  - Code attributed by the undertaking, when the options above are not available. Code must be unique and kept consistent over time.\n\nTo show identification of fund or share class",
+            "type": "string",
+            "maxLength": 255
+          },
+          "2_Type_of_identification_code_for_the_fund_share_or_portfolio": {
+            "description": "Codification chosen to identify the share of the CIS\n\nOne of the options in the following closed list to be used:\n1 - ISO 6166 for ISIN code\n2 - CUSIP (The Committee on Uniform Securities Identification Procedures number assigned by the CUSIP Service Bureau for U.S. and Canadian companies)\n3 - SEDOL (Stock Exchange Daily Official List for the London Stock Exchange)\n4 – WKN (Wertpapier Kenn-Nummer, the alphanumeric German identification number)\n5 - Bloomberg Ticker (Bloomberg letters code that identify a company's securities)\n6 - BBGID (The Bloomberg Global ID)\n7 - Reuters RIC (Reuters instrument code)\n8 – FIGI (Financial Instrument Global Identifier)\n9 - Other code by members of the Association of National Numbering Agencies\n99 - Code attributed by the undertaking\n\nClosed list is taken from QRT Log issued by EIOPA July 2015. Modified to add LEI in 2019 \nFor OTC derivatives cf Mifid II requirements",
+            "$ref": "#/components/schemas/identification_code_type"
+          },
+          "3_Portfolio_name": {
+            "description": "Name of the Portfolio or name of the CIS\n\nAlphanum (max 255)\n\nPortfolio or Fund or Share Class name",
+            "type": "string",
+            "maxLength": 255
+          },
+          "4_Portfolio_currency_(B)": {
+            "description": "Valuation currency of the portfolio\n\nCode ISO 4217\nCNH : 2 Chinese yuan (when traded offshore) - Hong Kong\nCNT: Chinese yuan (when traded offshore) -Taiwan\nGGP – Guernsey pound - Guernsey\nIMP: Isle of Man pound also Manx pound -Isle of Man\nJEP: Jersey pound - Jersey\nKID: Kiribati dollar -Kiribati\nNIS – New Israeli Shekel - Israel \nPRB – Transnistrian ruble - Transnistria (The code conflicts with ISO-4217 because PR stands for Puerto Rico. X should have been used for the first letter.)\nTVD – Tuvalu dollar- Tuvalu\n\nShare Class currency  if applicable - reported to insurer in currency of one fund or share class\n(should be consistent with field 3). In case no ISO code exists, please refer to market practices (ex CNH for  Chines Yuam traded offshore)",
+            "$ref": "#/components/schemas/currency"
+          },
+          "5_Net_asset_valuation_of_the_portfolio_or_the_share_class_in_portfolio_currency": {
+            "description": "Portfolio valuation\n\nnumber with floating decimal\n\nPer share class - NAV to be reported in same currency as Line 4",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "6_Valuation_date": {
+            "description": "Date of valuation (date positions valid for)\n\nYYYY-MM-DD         ISO 8601\n\nNAV date",
+            "$ref": "#/components/schemas/iso_date"
+          },
+          "7_Reporting_date": {
+            "description": "Date of reference for the reporting\n\nYYYY-MM-DD         ISO 8601\n\nDate to which data refers ( end of month for example)",
+            "$ref": "#/components/schemas/iso_date"
+          },
+          "8_Share_price": {
+            "description": "Share price of the fund/share class\n\nnumber with floating decimal\n\nthe valuation should be expressed in the currency indicated in data point 4",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "9_Cash_ratio": {
+            "description": "Amount of cash of the fund / total net asset value of the fund, in %\n\nnumber with floating decimal: 1 = 100%\n\nInclude cash and short term cash equivalents [excludes CIC 74 and other cash equivalents that might be considereed long term]",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ],
+            "maximum": 1
+          },
+          "10_Portfolio_modified_duration": {
+            "description": "Weighted average modified duration of portfolio positions\n\nnumber with floating decimal\n\nOnly required for relevant asset types (including derivatives)",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "11_Complete_SCR_delivery": {
+            "description": "Y/N\n\nalpha(1)\n\nY =  have you completed the SCR contributions (97 to 105)",
+            "$ref": "#/components/schemas/yes_no"
+          },
+          "12_CIC_code_of_the_instrument": {
+            "description": "CIC Code (Complementary Identification Code).\n\nCIC code - Alphanumeric (4)\n\nIndicative CIC\n\nThis codification (cf. CIC Table) would allow to determine:\n* the type and the country of the main codification\n* the S2 type of instrument\n* the S2 subtype of instrument\n* can be useful to add the source, but not mandatory\nComplementary Identification Code used to classify assets, as set out in Annex V: \nCIC Table - when classifying  asset using the CIC table, undertakings shall take into consideration the most representative risk to which the asset is exposed to.",
+            "$ref": "#/components/schemas/cic_code"
+          },
+          "13_Economic_zone_of_the_quotation_place": {
+            "description": "Indication of the economic zone of the quotation place\n\nInteger return corresponding to the following closed list:\n0 = non-listed\n1 = EEA\n2 = OECD exclude EEA\n3 = Rest of the World\n\nData point is option if the CIC in field 12 is provided as the economic zone of quotation can be mapped from the first two positions of the CIC.",
+            "$ref": "#/components/schemas/economic_zone"
+          },
+          "14_Identification_code_of_the_instrument": {
+            "description": "Identification code of the financial instrument - including identifier for leg of instrument if required\n\nCode must be unique and kept consistent over time.\n\nExample of unique code /idenifier for each leg: \n123456a and 123456b\n\nClosed list is taken from QRT Log issued by EIOPA July 2015\n\nFor multiple legs instruments this field shoud contain the Leg identification code, which must  be  different from item 68 the underlying identification code",
+            "type": "string",
+            "maxLength": 255
+          },
+          "15_Type_of_identification_code_for_the_instrument": {
+            "description": "Codification chosen to identify the instrument\n\nOne of the options in the following closed list to be used:\n1 - ISO 6166 for ISIN code\n2 - CUSIP (The Committee on Uniform Securities Identification Procedures number assigned by the CUSIP Service Bureau for U.S. and Canadian companies)\n3 - SEDOL (Stock Exchange Daily Official List for the London Stock Exchange)\n4 – WKN (Wertpapier Kenn-Nummer, the alphanumeric German identification number)\n5 - Bloomberg Ticker (Bloomberg letters code that identify a company's securities)\n6 - BBGID (The Bloomberg Global ID)\n7 - Reuters RIC (Reuters instrument code)\n8 – FIGI (Financial Instrument Global Identifier)\n9 - Other code by members of the Association of National Numbering Agencies\n99 - Code attributed by the undertaking\n\nClosed list is taken from QRT Log issued by EIOPA July 2015. Modified to add LEI in 2019 \nFor OTC derivatives cf Mifid II requirements",
+            "$ref": "#/components/schemas/identification_code_type"
+          },
+          "16_Grouping_code_for_multiple_leg_instruments": {
+            "description": "grouping code for operations on multi leg instruments\n\nAlphanum (max 255)  \n\nExample: 123456\n\nCommon identifier.  \nFor multiple legs instruments, this data point must be filled with the identification code of the instrument, which is the same for each leg.  \nCf Mifid II",
+            "type": "string",
+            "maxLength": 255
+          },
+          "17_Instrument_name": {
+            "description": "instrument name\n\nAlphanum (max 255)\n\nlimited maximum of 255 characters",
+            "type": "string",
+            "maxLength": 255
+          },
+          "18_Quantity": {
+            "description": "Number of instruments on position\n\nnumber with floating decimal\n\nEIOPA definition (06.02). Number of assets, for relevant assets. \n\nBuy gives +; sale gives -",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "19_Nominal_amount": {
+            "description": "Quantity * nominal unit amount\n\nnumber with floating decimal\n\nEIOPA definition (06.02 and 08.01). Applicable to instruments with CIC-codes 1,2,5,6,72,73,74, 8 and derivatives. Principle amount outstanding measured at par amount, for all assets where this item is relevant, and at nominal amount for CIC = 72, 73, 74, 75 and 79 if applicable. \nFor derivatives: The amount covered or exposed to the derivative. \nFor futures and options corresponds to contract size multiplied by the trigger value and by the number of contracts reported in that line. For swaps and forwards it corresponds to the contract amount of the contracts reported in that line. When the trigger value corresponds to a range, the average value of the range shall be used.\nThe notional amount refers to the amount that is being hedged / invested (when not covering risks). If several trades occur, it shall be the net amount at the reporting date.",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "20_Contract_size_for_derivatives": {
+            "description": "Contract size\n\nnumber with floating decimal\n\nUse EIOPA definition (QRT 0801)\nFor Futures & Options: number of underlying assets in the contract (e.g. for equity futures it is the number of equities to be delivered per derivative contract at maturity, for bond futures it is the reference amount underlying each contract).  The way the contract size is defined varies according with the type of instrument.  For futures on equities it is common to find the contract size defined as a function of the number of shares underlying the contract.  For futures on bonds, it is the bond nominal amount underlying the contract.",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "21_Quotation_currency_(A)": {
+            "description": "Currency of quotation for the instrument or denomination\n\nCode ISO 4217\nCNH : 2 Chinese yuan (when traded offshore) - Hong Kong\nCNT: Chinese yuan (when traded offshore) -Taiwan\nGGP – Guernsey pound - Guernsey\nIMP: Isle of Man pound also Manx pound -Isle of Man\nJEP: Jersey pound - Jersey\nKID: Kiribati dollar -Kiribati\nNIS – New Israeli Shekel - Israel \nPRB – Transnistrian ruble - Transnistria (The code conflicts with ISO-4217 because PR stands for Puerto Rico. X should have been used for the first letter.)\nTVD – Tuvalu dollar- Tuvalu\n\nField definition expanded to \"Currency of quotation for the instrument or denomination\" which makes this field more appropriate and inclusive for derivatives. In case no ISO code exists, please refer to market practices (ex CNH for  Chines Yuam traded offshore)",
+            "$ref": "#/components/schemas/currency"
+          },
+          "22_Market_valuation_in_quotation_currency_(A)": {
+            "description": "Market valuation of the position accrued interest included in quotation currency\n\nnumber with floating decimal\n\nNegative values on derivatives mean the fund should pay in order to offset the existing position - i.e. in case the quote spread is smaller that the coupon rate of the CDS for a long position\nMarket values on listed derivatives instruments or CFDs with daily margin call should be close to zero.  The deposit amounts and the sum of the margin calls since the inception of the positiion are often considered as cash.\nThis amount is signed",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "23_Clean_market_valuation_in_quotation_currency_(A)": {
+            "description": "Market valuation of the position accrued interest excluded in quotation currency\n\nnumber with floating decimal\n\nDuplication of data for equity or any kind of instrument without accrued interest \nThis amount is signed",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "24_Market_valuation_in_portfolio_currency_(B)": {
+            "description": "Market valuation of the position accrued interest included in portfolio currency\n\nnumber with floating decimal\n\nNegative values on derivatives mean the fund should pay in order to offset the existing position - i.e. in case the quote spread is smaller that the coupon rate of the CDS for a long position\nMarket values on listed derivatives instruments or CFDs with daily margin call should be close to zero.  The deposit amounts and the sum of the margin calls since the inception of the positiion are often considered as cash\nThis amount is signed",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "25_Clean_market_valuation_in_portfolio_currency_(B)": {
+            "description": "Market valuation of the position accrued interest excluded in portfolio currency\n\nnumber with floating decimal\n\nDuplication of data for equity or any kind of instrument without accrued interest \nThis amount is signed",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "26_Valuation_weight": {
+            "description": "Market valuation in portfolio currency / portfolio net asset value in %\n\nnumber with floating decimal: 1 = 100%\n\n100 % =1 - including cash\nRequired data to calculate the SCR in the case of an open fund. \nPer share class\nThis amount is signed",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "27_Market_exposure_amount_in_quotation_currency_(A)": {
+            "description": "Market exposure amount different from market valuation for derivatives (valuation of the equivalent position on the underlying asset)\n\nnumber with floating decimal\n\nFor equity future contracts, index futures contracts and options etc. data is calculated depending on characteristics of the contract (quantity, contract size, strike price etc.) and the index value or underlying value. \nExample: ESTX 50 Index Future: quantity (79) x contract size (10) x index market value (3.145) = 2.484.550 EUR Exposure. \nFor options: quantity (79) x contract size (10) * Last valuation price of the underlying (72) *  Sensitivity to underlying asset price (delta) (93). \nFor the fixed income future contracts this data is equal to the exposure resulting on the cheapest to deliver (analogous to the preceding calculations for equity contracts). \nFor FRA contracts, FX-Forwards and CDS this data is the notional amount \nThis amount is signed",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "28_Market_exposure_amount_in_portfolio_currency_(B)": {
+            "description": "Market exposure amount different from market valuation for derivatives (valuation of the equivalent position on the underlying asset) in the quotation currency of the portfolio\n\nnumber with floating decimal\n\nThis field used for FX exposures, equity exposures, credit and interest rates; using the following rules:\n* exposure on derivatives are deriving from equivalent exposure on simple underlying instruments without considering type of risk to be evaluated\n*both Put and CDS should have negative exposures and positive quantities or nominal amounts for long positions, with positive exposure for short positions \n*residual maturity should be handled by inf=ormation system that will do SCR calculations and produce QRTs\n* exposure on cash or equivalent should be egal to the valuation ( exposure for interest rate risks should be obtained by multiplying the amount by the modified duration (field 90) and for credit risk by credit sensitivity (field 91)\n * exposure for options or convertible bond instruments should be used by multiplying the exposure by the delta for the relevant risk category.\nThis amount is signed",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "29_Market_exposure_amount_for_the_3rd_quotation_currency_(C)": {
+            "description": "Market exposure amount different from market valuation for derivatives (valuation of the equivalent position on the underlying asset) in the quotation currency of the underlying asset\n\nnumber with floating decimal\n\nOptional\nMay be used, in some cases, to describe instruments such as FX forwards or FX options.\nThis amount is signed",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "30_Market_exposure_in_weight": {
+            "description": "Exposure valuation in portfolio currency / total net asset value of the fund, in %\n\nnumber with floating decimal: 1 = 100%\n\nRequired data to determine the market exposure arising from the derivatives within the framework of open funds\nThis amount is signed",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "31_Market_exposure_for_the_3rd_currency_in_weight_over_NAV": {
+            "description": "Exposure valuation for leg 2 in portfolio currency / total net asset value of the fund, in %\n\nnumber with floating decimal: 1 = 100%\n\nConditionnal\nMay be used, in some cases, to describe instruments such as FX forwards or FX options.",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "32_Interest_rate_type": {
+            "description": "* Fixed - plain vanilla fixed coupon rate\n* Floating - plain vanilla floating coupon rates (for all interest rates, which refer to a reference interest rate like EONIA or Libor or Libor + margin in BP)\n* Variable - all other variable interest rates like step-up or step-down or fixed-to-float bonds. The variable feature is the (credit) margin or the change between fixed and float.\n* Infation_linked for inflation linked bonds in order to identify them.\n\n\"Fixed\" or \"Floating\" or \"Variable\" or \"Inflation_linked\"\n\nFor step up bonds only ongoing period characteristics are entered. \nFloating example : a bond with a coupon rate of Libor + xxx bp, fixed at the begining of the period\nVariable example : a bond with a coupon rate of EONIA + xxx bp, that can only be exactly known at the end of the period\nInflation linked example : a bond with a nominal and a coupon rate embedding an inflation index component",
+            "$ref": "#/components/schemas/interest_rate_type"
+          },
+          "33_Coupon_rate": {
+            "description": "Fixed rate: coupon rate as a percentage of nominal amount\nFloating rate: last fixing rate + margin as a percentage of nominal amount\nVariable rate: estimation of current rate over the period + margin as a percentage of nominal amount\nall rates are expressed on an annual basis\n\nnumber with floating decimal\n\nThis field should be filled with the current coupon rate expressed as a percentage of the nominal amount.  It is expressed in a different way from weights (fields 26 and 30 for example).  \nExample: bond with  fixed 1.5 % coupon to show as \"1.5\".  A  floater euribor3m + 0.20% to show as \"0.26\" provided the last fixing was 0.06% for the euribor3m.",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "34_Interest_rate_reference_identification": {
+            "description": "identification code for interest rate index\n\nExample : EUR006M\n\n34 & 35 fields have been swapped from 20140915 version. \nThis field should be used to identify the difference between OIS, EONIA, and EURIBOR/LIBOR or other rate index/reference Indices for SCR calculations",
+            "type": "string"
+          },
+          "35_Identification_type_for_interest_rate_index": {
+            "description": "Type of codification used for interest rate index\n\ne.g. \"BLOOMBERG\" or empty (if internal codification)\n\n34 & 35 fields have been swapped from 20140915 version\nMay use NA or similar code for systems not favouring an empty field",
+            "type": "string"
+          },
+          "36_Interest_rate_index_name": {
+            "description": "name of interest rate index\n\nEuribor 6month",
+            "type": "string"
+          },
+          "37_Interest_rate_margin": {
+            "description": "Facial margin as a percentage of nominal amount on an annual basis\n\nnumber with floating decimal\n\nRepresents the directional numeric adjustment made against the interest rate index. For example in the scenario of an instrument with an interest rate of Euribor 6 month - 0.5% then this field should be populated with -0.5.",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "38_Coupon_payment_frequency": {
+            "description": "number of coupon payment per year\n0 = other than below options:\n1= annual\n2= biannual\n4= quarterly\n12= monthly\n52= weekly\n\nFrequency (\"0\" = other than /\"1\"= Annual  / \"2\"= biannual / \"4\"=quarterly / \"12\"= monthly / \"52\" = weekly)\n\nFor OTC derivatives this is the frequency of payment (or receipt) of coupons/interest.",
+            "$ref": "#/components/schemas/coupon_payment_frequency"
+          },
+          "39_Maturity_date": {
+            "description": "Last redemption date\n\nYYYY-MM-DD         ISO 8601\n\nFinal maturity date for fixed income instrument or derivatives. \n9999-12-31 for perpetual bonds.  \nExpiry date for options.",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/iso_date"
+              },
+              {
+                "const": "9999-12-31"
+              }
+            ]
+          },
+          "40_Redemption_type": {
+            "description": "Type of redemption payment schedule : bullet, constant annuity…\n\n\"Bullet\", \"Sinkable\", \"defaulted\" empty if non applicable\n\nA word of caution: the purpose of this field is for those who wish to feed ALM systems or recalculate prices - if bullet this is achievable; if sinkable, this is not.",
+            "$ref": "#/components/schemas/redemption_type"
+          },
+          "41_Redemption_rate": {
+            "description": "Redemption amount in % of nominal amount\n\nnumber with floating decimal\n\nIf known 1=100%.                                                          \nLinked to field 19 (Nominal amount).",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ],
+            "minimum": 0
+          },
+          "42_Callable_putable": {
+            "description": "Cal = Call\nPut = Put\nCap = Cap\nFlr= Floor\nempty if none\n\nAlpha(3)( \"Cal\" = Call / \"Put\" = Put / \"Cap\" = Cap / \"Flr\" = Floor)\n\nEnter the characteristics of the shorter maturity option in case of various options. Empty if no options. If the financial instrument has multiple options, the derivative part has to be used.",
+            "$ref": "#/components/schemas/call_put_cap_floor"
+          },
+          "43_Call_put_date": {
+            "description": "Next call/put date\n\nYYYY-MM-DD         ISO 8601\n\nThe first expiry date for options can be captured here - the expiry date of the option element of bonds with embedded optionality.",
+            "$ref": "#/components/schemas/iso_date"
+          },
+          "44_Issuer_bearer_option_exercise": {
+            "description": "I : issuer\nB : bearer\nO : Both\n\nAlpha(1) (\"I \"= Issuer / \"B\" = bearer / \"O\"= both)\n\nIf available. For any instrument with a call / put that could be exercised by the issuer or the bearer.",
+            "$ref": "#/components/schemas/issuer_bearer_option"
+          },
+          "45_Strike_price_for_embedded_(call_put)_options": {
+            "description": "strike price, floor or cap rate for embedded options expressed as a percentage of the nominal amount.\n\nnumber with floating decimal\n\nStrike price, floor or cap rate for next date in case of multiple options",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "46_Issuer_name": {
+            "description": "name of the issuer\n\nAlpha (max 255)\n\nFor OTC derivatives this data should be the counterpart. For derivative the underlying must be filled in field 80\nFor bank accounts, it must be the bank name",
+            "type": "string",
+            "maxLength": 255
+          },
+          "47_Issuer_identification_code": {
+            "description": "LEI\n\nAlphanumeric (20)\n\nFor OTC derivatives this data should be the counterpart. For derivative the underlying must be filled in field 81",
+            "$ref": "#/components/schemas/lei_code"
+          },
+          "48_Type_of_identification_code_for_issuer": {
+            "description": "C0220   1- LEI 9 - None\n\n1 or 9\n\nFor OTC derivatives this data should be the counterpart. For derivative the underlying must be filled in field 82",
+            "$ref": "#/components/schemas/identification_code_type"
+          },
+          "49_Name_of_the_group_of_the_issuer": {
+            "description": "Name of the highest parent company\n\nAlpha (max 255)\n\nFor OTC derivatives this data should be the counterpart. For derivative the underlying must be filled in field 83",
+            "type": "string",
+            "maxLength": 255
+          },
+          "50_Identification_of_the_group": {
+            "description": "LEI\n\nAlphanumeric (20)\n\nFor OTC derivatives this data should be the counterpart. For derivative the underlying must be filled in field 84",
+            "$ref": "#/components/schemas/lei_code"
+          },
+          "51_Type_of_identification_code_for_issuer_group": {
+            "description": "C0260   1- LEI 9 - None\n\n1 or 9\n\nFor OTC derivatives this data should be the counterpart. For derivative the underlying must be filled in field 85.\nOnly LEI should be used",
+            "$ref": "#/components/schemas/identification_code_type"
+          },
+          "52_Issuer_country": {
+            "description": "Country of the issuer company\n\nCode ISO 3166-1 alpha 2\n\n* The localisation of the issuer is assessed by the address of the entity issuing the asset.  \n* For investment funds, the country is relative to the fund's manager.  \n    One of the options in the following closed list to be used:\n    1.  ISO 3166-1 alpha-2 code. \n    2.  XA: Supranational issuers  \n    3.  EU: European Union Institutions",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/iso_country_code"
+              },
+              {
+                "enum": ["XA", "EU"]
+              }
+            ]
+          },
+          "53_Issuer_economic_area": {
+            "description": "Economic area of the Issuer\n1=EEA / 2=NON EEA / 3=NON OECD\n\nInteger return corresponding to the following closed list:\n1 = EEA\n2 = OECD exclude EEA\n3 = Rest of the World\n\nData point is optional if field 52 is provided as the issuer economic area can be mapped from the issuer country.",
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ],
+            "enum": [1, 2, 3, null]
+          },
+          "54_Economic_sector": {
+            "description": "Economic sector\n\nFull NACE code fo the K financial sector and the first letter for the non financial sectors (as per EIOPA documentation)\n\nNACE should be full version for category K i.e. 5 characters without dots. The EIOPA requires only the first letter for non financial sectors. Alternatively, 5 characters or the leading letter for sectors other than K.",
+            "$ref": "#/components/schemas/nace_code"
+          },
+          "55_Covered_not_covered": {
+            "description": "Alpha(2) (\"C\" = Covered / \"NC\" = Non Covered)\n\nused for mortgage covered bonds and public sector covered bonds (art 22 UCITS directive 85/611/EEC) \n - option to be confirmed: to add the guarantor name",
+            "$ref": "#/components/schemas/covered_not_covered"
+          },
+          "56_Securitisation": {
+            "description": "Securitisation typology\n\nalpha (1)\n\"a\" refers to the fact that the asset managers have not assessed the eligibility of a treatment of the securitisation positions under Solvency II\n\"b\" refers to security positions eligible for art 178 (3) and art 178 (5) introduced by the regulation 2018/1221. (Senior STS)\n\"c\" refers to security positions eligible for art 178 (4) and art 178 (6) introduced by the regulation 2018/1221. (Junior STS)\n\"d\" refers to resecuritisation positions as per art 178(7) introduced by the regulation 2018/1221. (re-securitisation)\n\"e\" refers to securitisation positions not covered by any other cases, categories as per Art 178 (8)  and Art 178 (9) introduced by the regulation 2018/1221. (non STS)\n\"f\" refers to security positions eligible for art 178a (1) & (2) introduced by the regulation 2018/1221. (transitional regime for type 1 securitisations without new underlying exposure since the 01/01/2019)\n\"g\" refers to security positions eligible for art 178a (3) introduced by the regulation 2018/1221. (transistional regime for some type 1 securitisations on residential mortgages)\n\"h\"refers to security positions eligible for art 178a (4) introduced by the regulation 2018/1221. (transistional regime for some type 1 securitisations on residential mortgages)\n\"i\" refers to security positions elligible for art 180 (10) and art 180 (10a) introduced by the regulation 2018/1221. (Securitisation secured by the EIB or the EIF) \n\"j\" refers to security positions that have been analysed and shall not be considered as \"securitisation \" under Solvency 2 (No securitisation).\n\nUsed for synthetic ABS (synthetic asset backed securities, CDO etc.) and other ABS Or Structured Products only.\nParticipant shall not fill this fields for assets other than CIC 5 or CIC 6. \nParticpant shall fill \"a\" or \"j\" for structured notes or collateralized securities that are not considered as securisations.",
+            "$ref": "#/components/schemas/securitisation"
+          },
+          "57_Explicit_guarantee_by_the_country_of_issue": {
+            "description": "Y = guaranteed\nN = without guarantee\n\nAlpha (1) (\"Y\" = yes \"N\"= no)\n\nData used to identify the debt guaranteed by a country\nYes = 100%, No < 100%",
+            "$ref": "#/components/schemas/yes_no"
+          },
+          "58_Subordinated_debt": {
+            "description": "Subordinated or not ?\n\nAlpha (1) (\"Y\" = yes \"N\"= no)",
+            "$ref": "#/components/schemas/yes_no"
+          },
+          "59_Credit_quality_step": {
+            "description": "Credit quality step as defined by S2 regulation\n\nnum (1)\n\nSee also CEBS Standardised Approach convention. \nOne of the options in the following closed list shall be used :\n0. Credit quality step 0\n1. Credit quality step 1\n2. Credit quality step 2\n3. Credit quality step 3\n4. Credit quality step 4\n5. Credit quality step 5\n6. Credit quality step 6\n9. No rating available\n\nIdentify the credit quality step attributed to the asset, as defined by article 109a(1) of Directive 2009/138/EC",
+            "$ref": "#/components/schemas/credit_quality_step"
+          },
+          "60_Call_Put_Cap_Floor": {
+            "description": "Cal = Call\nPut = Put\nCap = Cap\nFlr= Floor\nempty if none\n\nAlpha(3)( \"Cal\" = Call / \"Put\" = Put / \"Cap\" = Cap / \"Flr\" = Floor)",
+            "$ref": "#/components/schemas/call_put_cap_floor"
+          },
+          "61_Strike_price": {
+            "description": "Strike price expressed as the quotation of the underlying asset\n\nnumber with floating decimal\n\nCurrency of issue  - underlying local currency\n* Foreign currency options - strike is shown as currency of Leg 1 against Leg 2\n* Foreign currency forwards - strike is the forward rate of currency of Leg 1 against currency of Leg 2\n* Swaptions - strike of option shown in this field, with Fixed rate of underlying swap is also shown in Coupon 33\nVariance swaps - strike will be Volatility Strike Price, defined as square root of variance strike",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "62_Conversion_factor_(convertibles)_concordance_factor_parity_(options)": {
+            "description": "number with floating decimal",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "63_Effective_date_of_instrument": {
+            "description": "Effective Date\n\nYYYY-MM-DD         ISO 8601\n\nThe date on which a derivative (such as an interest rate swap) would start to accrue interest",
+            "$ref": "#/components/schemas/iso_date"
+          },
+          "64_Exercise_type": {
+            "description": "AMerican, EUropean, ASiatic, BErmudian\n\nAlpha (2)(\"AM\", \"EU\", \"AS\", \"BE\")",
+            "$ref": "#/components/schemas/exercise_type"
+          },
+          "65_Hedging_rolling": {
+            "description": "Indication of existing Risk Mitigation program ( Y = used for Risk Mitigation purpose and the position is systematically rolled before maturity, N = used for hedging purpose but no systematic roll before maturity); EPM = Efficient Portfolio Management / not used for hedging purpose .\n\nAlpha (3)  (\"Y\" ; \"N\"; \"EPM\" )\n\nIn order to be considered as a risk mitigation techniques, the hedging rolling criteria should be valide only for derivatives instruments with more than 1 month initial duration. (from inception to maturity).",
+            "$ref": "#/components/schemas/yes_no_epm"
+          },
+          "67_CIC_of_the_underlying_asset": {
+            "description": "CIC Code (Complementary Identification Code).\n\nAlphanumeric (4)\n\nThis codification (CIC Table) would allow determination of :\n- the type and the country of the main codification\n- the S2 type of instrument \n- the S2 subtype of instrument\nComplementary Identification Code used to classify assets, as set out in Annex V: \nCIC Table - when classifying  asset using the CIC table, undertakings shall take into consideration the most representative risk to which the asset is exposed to.",
+            "$ref": "#/components/schemas/cic_code"
+          },
+          "68_Identification_code_of_the_underlying_asset": {
+            "description": "identification code of underlying asset\n\nDepends on identification type\n\nOne of the options in the following closed list can be used: \n1. ISO 6166 ISIN when available \n2. other \"recognised\" code otherwise  (CUSIP, Bloomberg ticker, Reuters RIC ) \n3. Code attributed by the undertaking when the options above are not available.  The code used shall be kept consistent over time and shall not be reused for other products. \n- Every asset has own code.",
+            "type": "string",
+            "maxLength": 255
+          },
+          "69_Type_of_identification_code_for_the_underlying_asset": {
+            "description": "name of the codification used for identification of the underlying asset\n\nOne of the options in the following closed list to be used:\n1 - ISO 6166 for ISIN code\n2 - CUSIP (The Committee on Uniform Securities Identification Procedures number assigned by the CUSIP Service Bureau for U.S. and Canadian companies)\n3 - SEDOL (Stock Exchange Daily Official List for the London Stock Exchange)\n4 – WKN (Wertpapier Kenn-Nummer, the alphanumeric German identification number)\n5 - Bloomberg Ticker (Bloomberg letters code that identify a company's securities)\n6 - BBGID (The Bloomberg Global ID)\n7 - Reuters RIC (Reuters instrument code)\n8 – FIGI (Financial Instrument Global Identifier)\n9 - Other code by members of the Association of National Numbering Agencies\n99 - Code attributed by the undertaking\n\nClosed list is taken from QRT Log issued by EIOPA July 2015. Modified to add LEI in 2019 \nFor OTC derivatives cf Mifid II requirements",
+            "$ref": "#/components/schemas/identification_code_type"
+          },
+          "70_Name_of_the_underlying_asset": {
+            "description": "Name\n\nAlpha (max 255)",
+            "type": "string",
+            "maxLength": 255
+          },
+          "71_Quotation_currency_of_the_underlying_asset_(C)": {
+            "description": "currency of quotation for the asset\n\nCode ISO 4217\n\nThis field would be used to determine the forex risk exposure related to the underlying of a convertible. In case no ISO code exists, please refer to market practices (ex CNH for  Chines Yuam traded offshore)",
+            "$ref": "#/components/schemas/currency"
+          },
+          "72_Last_valuation_price_of_the_underlying_asset": {
+            "description": "Last valuation price of the underlying asset\n\nnumber with floating decimal\n\nmost recent price of the underlying asset  - optional\n - linked to  the question of the  rationale to provide Greeks data  in the file",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "73_Country_of_quotation_of_the_underlying_asset": {
+            "description": "Country of quotation of the underlying asset\n\nCode ISO 3166-1 alpha 2\n\nThis field would be used to determine the action risk exposure of convertible bonds. Same codification to the first 2 characters of the CIC table. - optional",
+            "$ref": "#/components/schemas/iso_country_code"
+          },
+          "74_Economic_area_of_quotation_of_the_underlying_asset": {
+            "description": "economic area of quotation\n0= non listed, listed 1=EEA / 2=NON EEA / 3=NON OECD\n\nInteger return corresponding to the following closed list:\n0 = non-listed\n1 = EEA\n2 = OECD exclude EEA\n3 = Rest of the World\n\nData point is option if the CIC in field 12 is provided as the economic zone of quotation can be mapped from the first two positions of the CIC.",
+            "$ref": "#/components/schemas/economic_zone"
+          },
+          "75_Coupon_rate_of_the_underlying_asset": {
+            "description": "Fixed rate : coupon rate as a percentage of nominal amount\nall rates are expressed on an annual basis\n\nnumber with floating decimal\n\nto be entered if the underlying is an interest rate instrument. it is the same field as field 33 but for the underlying instrument",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "76_Coupon_payment_frequency_of_the_underlying_asset": {
+            "description": "number of coupon payment per year\n0 = other than below options:\n1= annual\n2= biannual\n4= quarterly\n12= monthly\n52= weekly\n\nFrequency (\"0\" = other than /\"1\"= Annual  / \"2\"= biannual / \"4\"=quarterly / \"12\"= monthly / \"52\" = weekly)",
+            "$ref": "#/components/schemas/coupon_payment_frequency"
+          },
+          "77_Maturity_date_of_the_underlying_asset": {
+            "description": "Last redemption date\n\nYYYY-MM-DD         ISO 8601\n\nFinal maturity date for rate instruments or derivatives",
+            "$ref": "#/components/schemas/iso_date"
+          },
+          "78_Redemption_profile_of_the_underlying_asset": {
+            "description": "Type of redemption payment schedule : bullet, constant annuity…\n\n\"Bullet\", \"Sinkable\", empty if non applicable\n\nThis field is for ALM systems or to recalculate prices",
+            "$ref": "#/components/schemas/redemption_type"
+          },
+          "79_Redemption_rate_of_the_underlying_asset": {
+            "description": "Redemption amount in % of nominal amount\n\nnumber with floating decimal\n\n1=100%",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ],
+            "minimum": 0
+          },
+          "80_Issuer_name_of_the_underlying_asset": {
+            "description": "name of the issuer\n\nAlpha (max 255)\n\nThis is the issuer of the underlying instrument : for a CDS it is the name of the issuer of reference, for a convertible bond it is the issuer of the bond which may be different from the issuer of the convertible bond itself. For an Index put \"index\"",
+            "type": "string",
+            "maxLength": 255
+          },
+          "81_Issuer_identification_code_of_the_underlying_asset": {
+            "description": "identification code of the issuer\n\nDepend on the nomenclature used\n\nThis is the issuer of the underlying instrument : for a CDS it is the name of the issuer of reference, for a convertible bond it is the issuer of the bond which may be different from the issuer of the convertible bond itself. For an Index put \"index\"",
+            "type": "string",
+            "maxLength": 255
+          },
+          "82_Type_of_issuer_identification_code_of_the_underlying_asset": {
+            "description": "C0220   1- LEI 9 - None\n\n1 or 9",
+            "$ref": "#/components/schemas/identification_code_type"
+          },
+          "83_Name_of_the_group_of_the_issuer_of_the_underlying_asset": {
+            "description": "Name of the highest parent company\n\nAlpha (max 255)\n\nThis is the issuer of the underlying instrument : for a CDS it is the name of the issuer of reference, for a convertible bond it is the issuer of the bond which may be different from the issuer of the convertible bond itself. For an Index put \"index\"",
+            "type": "string",
+            "maxLength": 255
+          },
+          "84_Identification_of_the_group_of_the_underlying_asset": {
+            "description": "Identification code of the group\n\nDepend on the nomenclature used\n\nThis is the issuer of the underlying instrument : for a CDS it is the name of the issuer of reference, for a convertible bond it is the issuer of the bond which may be different from the issuer of the convertible bond itself. For an Index put \"index\"",
+            "type": "string",
+            "maxLength": 255
+          },
+          "85_Type_of_the_group_identification_code_of_the_underlying_asset": {
+            "description": "C0260   1- LEI 9 - None\n\n1 or 9",
+            "$ref": "#/components/schemas/identification_code_type"
+          },
+          "86_Issuer_country_of_the_underlying_asset": {
+            "description": "Country of the issuer company\n\nCode ISO 3166-1 alpha 2",
+            "$ref": "#/components/schemas/iso_country_code"
+          },
+          "87_Issuer_economic_area_of_the_underlying_asset": {
+            "description": "economic area of the Issuer\n1=EEA / 2=NON EEA / 3=NON OECD\n\nInteger return corresponding to the following closed list:\n1 = EEA\n2 = OECD exclude EEA\n3 = Rest of the World\n\nData point is option if the CIC in field 12 is provided as the economic zone of quotation can be mapped from the first two positions of the CIC.",
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ],
+            "enum": [1, 2, 3, null, ""]
+          },
+          "88_Explicit_guarantee_by_the_country_of_issue_of_the_underlying_asset": {
+            "description": "Y = Guaranteed\nN = without guarantee\n\nAlpha (1) (\"Y\" = yes \"N\"= no)\n\nData used to identify the stocks guaranteed by a country",
+            "$ref": "#/components/schemas/yes_no"
+          },
+          "89_Credit_quality_step_of_the_underlying_asset": {
+            "description": "Credit quality step as defined by S2 regulation\n\nnum (1)\n\nSee also CEBS Standardised Approach convention. \nOne of the options in the following closed list shall be used :\n0. Credit quality step 0\n1. Credit quality step 1\n2. Credit quality step 2\n3. Credit quality step 3\n4. Credit quality step 4\n5. Credit quality step 5\n6. Credit quality step 6\n9. No rating available\n\nIdentify the credit quality step attributed to the asset, as defined by article 109a(1) of Directive 2009/138/EC",
+            "$ref": "#/components/schemas/credit_quality_step"
+          },
+          "90_Modified_duration_to_maturity_date": {
+            "description": "number with floating decimal\n\nTwo cases:\n1. Modified duration in years \n- only applies to CIC categories 1, 2, 4 (when applicable, e.g. for investment funds mainly invested in bonds), 5 and 6.\n- For  assets without fixed maturity the first  call date shall be used. \n- For  derivatives with a duration measure defined as the 'residual  modified duration' for which a duration measure is applicable - this has been explained by EIOPA as the duration based on the remaining livetime of the derivative - thus \"modified duration. \n- Calculated  as net duration between in and out  flows from the derivative, when applicable  \n- The duration to be calculated based on economic value.\n\n2. Modified Duration to the most probable option adjusted duration",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "91_Modified_duration_to_next_option_exercise_date": {
+            "description": "number with floating decimal\n\nModified duration based on dirty price at next option. Derivative of the dirty price of the instrument with respect to the interest rate. It is a signed amount that should be negative in most cases.",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "92_Credit_sensitivity": {
+            "description": "number with floating decimal\n\nThree cases (cf Q&A):\n1. Modified Credit Duration (Floaters, variable coupons, loans…)\n2. Derived price using spread divided by dirty price - 90 and 91 (signed amount)\n3.  PVBPs (DV01, CS01) in fields 90, 91 and 92 for derivatives",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "93_Sensitivity_to_underlying_asset_price_(delta)": {
+            "description": "Sensitivity to the underlying asset\n\nnumber with floating decimal\n\nStandard delta definition ( derivative of the option price by the underlying instrument price).\nFor OTC derivatives: Standard delta definition (derivative of option price by the underlying instrument price).  Interest rate DV01 for interest rate swaps and Inflation DV01 for inflation swaps",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "94_Convexity_gamma_for_derivatives": {
+            "description": "Convexity for interest rates instruments; or \ngamma for derivatives with optional components\n\nnumber with floating decimal\n\nStandard convexity or gamma calculation if available\nThe content of this field depends on the type of instrument. For convertible indicate yield convexity.",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "95_Identification_of_the_original_portfolio_for_positions_embedded_in_a_fund": {
+            "description": "identification code of the investee funds\n\nISIN or CUSIP or any other identification\n\nWhere the top level fund/share class on this template holds a second level fund there are two possible approaches:\n1. the second level fund is reported as a single line holding with no further look-through to its holdings on the same template.\n2. the second level fund's holdings are shown on a line-by-line basis on the top level fund template.\nIn scenario 1. this field would not be required.\nIn scenario 2. the second level fund would not appear as a line item having been replaced by its component holdings against which this field should be populated to identify those line-by-line positions of the second level fund. Note that no consolidation of common holdings between the top level fund and the second level fund should be undertaken.",
+            "type": "string",
+            "maxLength": 255
+          },
+          "97_SCR_mrkt_IR_up_weight_over_NAV": {
+            "description": "Capital requirement for interest rate risk for the \"up\" shock    (Delta between Market value before and market value after stress)\n\nnumber with floating decimal\n\noptional - percentage of total net asset value of the fund( 100 %=1); algebraic sign: \"+\": increased capital requirements; \"-\" decreased capital requirements",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "98_SCR_mrkt_IR_down_weight_over_NAV": {
+            "description": "Capital requirement for interest rate risk for the \"down\" shock  (Delta between Market value before and market value after stress)\n\nnumber with floating decimal\n\noptional - percentage of total net asset value of the fund( 100 %=1) algebraic sign: \"+\": increased capital requirements; \"-\" decreased capital requirements",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "99_SCR_mrkt_eq_type1_weight_over_NAV": {
+            "description": "Capital requirement for equity risk - Type 1 *)   (Delta between Market value before and market value after stress)\n\nnumber with floating decimal\n\noptional - percentage of total net asset value of the fund( 100 %=1) algebraic sign: \"+\": increased capital requirements; \"-\" decreased capital requirements\nIn case of private equity funds for which every underlying investment is elligible to type_1_private_equity provisions and no investments represents more than 10 % of the funds valuation, then the asset manager, evenutally doing the calculation may consider every line as equity type 1 even if they are not listed and fill in this data point. If one investment of the portfolio does not repect these rules, then all the investments shall be considered as type 2 equity and this data point shall be blank.",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "100_SCR_mrkt_eq_type2_weight_over_NAV": {
+            "description": "Capital requirement for equity risk - Type 2 *)  (Delta between Market value before and market value after stress)\n\nnumber with floating decimal\n\noptional - percentage of total net asset value of the fund( 100 %=1) algebraic sign: \"+\": increased capital requirements; \"-\" decreased capital requirements\nThis field should also be filled for infrastructure investments since these investments are perfectly correlated with  type 2 equities as per formula described in UE DR 2017/1542 art 168",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "101_SCR_mrkt_prop_weight_over_NAV": {
+            "description": "Capital requirement for property risk  (Delta between Market value before and market value after stress)\n\nnumber with floating decimal\n\noptional - percentage of total net asset value of the fund( 100 %=1) algebraic sign: \"+\": increased capital requirements; \"-\" decreased capital requirements",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "102_SCR_mrkt_spread_bonds_weight_over_NAV": {
+            "description": "Capital requirement for spread risk on bonds  (Delta between Market value before and market value after stress)\n\nnumber with floating decimal\n\noptional - percentage of total net asset value of the fund( 100 %=1) algebraic sign: \"+\": increased capital requirements; \"-\" decreased capital requirements",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "103_SCR_mrkt_spread_structured_weight_over_NAV": {
+            "description": "Capital requirement for spread risk on structured products   (Delta between Market value before and market value after stress)\n\nnumber with floating decimal\n\noptional - percentage of total net asset value of the fund( 100 %=1) algebraic sign: \"+\": increased capital requirements; \"-\" decreased capital requirements",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "104_SCR_mrkt_spread_derivatives_up_weight_over_NAV": {
+            "description": "Capital requirement for spread risk - credit derivatives (upward shock)   (Delta between Market value before and market value after stress)\n\nnumber with floating decimal\n\noptional - percentage of total net asset value of the fund( 100 %=1) algebraic sign: \"+\": increased capital requirements; \"-\" decreased capital requirements",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "105_SCR_mrkt_spread_derivatives_down_weight_over_NAV": {
+            "description": "Capital requirement for spread risk - credit derivatives (downward shock)  (Delta between Market value before and market value after stress)\n\nnumber with floating decimal\n\noptional - percentage of total net asset value of the fund( 100 %=1) algebraic sign: \"+\": increased capital requirements; \"-\" decreased capital requirements",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "106_Asset_pledged_as_collateral": {
+            "description": "Indicator used to identify the under-written instruments (Assets D1)\n\nOne of the options in the following closed list shall be used for the pledged part of the asset:\n1 – Assets in the balance sheet that are collateral pledged\n2 – Collateral for reinsurance accepted\n3 – Collateral for securities borrowed\n4 – Repos\n9 – Not collateral\n\noptional - needed for segregated account\nIdentify assets kept in the undertaking's balance–sheet that are pledged as collateral. For partially pledged assets two rows for each asset shall be reported, one for the pledged amount and another for the remaining part. This is the field C0100 of the S06.02 QRT template as described in the annex II of the 2015/2450 of 2 December 2015 laying down implementing technical standards with regard to the templates for the submission of information to the supervisory authorities.\nThis field does not concerns collateral received but collateral given.",
+            "$ref": "#/components/schemas/asset_pledged_collateral"
+          },
+          "107_Place_of_deposit": {
+            "description": "Instruments' place of deposit (S.06.02 - old: Assets D1)\n\nISO code\n\noptional - needed for segregated account (in order to fill QRT S0602 reports)",
+            "$ref": "#/components/schemas/iso_country_code"
+          },
+          "108_Participation": {
+            "description": "Indicator used to identify the guidelines of participation in accountancy terms\n\n1 Participation / 2 non participation\n\noptional - needed for segregated account (in order to fill QRT S0602 reports)",
+            "$ref": "#/components/schemas/participation"
+          },
+          "110_Valorisation_method": {
+            "description": "valuation method (cf specifications QRT) (S.06.02 - old: Assets D1)\n\nIdentify the valuation method used when valuing assets. One of the\noptions in the following closed list shall be used:\n1 – quoted market price in active markets for the same assets\n2 – quoted market price in active markets for similar assets\n3 – alternative valuation methods\n4 – adjusted equity methods (applicable for the valuation of\nparticipations)\n5 – IFRS equity methods (applicable for the valuation of\nparticipations)\n6 – Market valuation according to Article 9(4) of Delegated\nRegulation 2015/35\n\noptional - needed for segregated account (in order to fill QRT S0602 reports)",
+            "$ref": "#/components/schemas/valuation_method"
+          },
+          "111_Value_of_acquisition": {
+            "description": "Value of acquisition (S.06.02 - old: Assets D1)\n\nTotal acquisition value for assets held, clean value without accrued interest. .Not applicable to CIC categories 7 and 8.\n\noptional - needed for segregated account (in order to fill QRT S0602 reports)",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "112_Credit_rating": {
+            "description": "Rating of the counterparty / issuer (cf specifications QRT) (S.06.02 - old: Assets D1)\n\noptional - needed for segregated account (in order to fill QRT S0602 reports)",
+            "type": "string"
+          },
+          "113_Rating_agency": {
+            "description": "Name of the rating agency (cf specification QRT) (S.06.02 - old: Assets D1)\n\noptional - needed for segregated account (in order to fill QRT S0602 reports)",
+            "type": "string"
+          },
+          "114_Issuer_economic_area": {
+            "description": "economic area of the Issuer\n1=EEA / 2=NON EEA / 3=NON OECD\n\nInteger return corresponding to the following closed list:\n1 = EEA\n2 = OECD exclude EEA\n3 = Rest of the World\n\nData point is option if the CIC in field 12 is provided as the economic zone of quotation can be mapped from the first two positions of the CIC.",
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ],
+            "enum": [1, 2, 3, null, ""]
+          },
+          "115_Fund_issuer_code": {
+            "description": "LEI when available, otherwise not reported\n\nAlphanum\n\nS.06.02 (old: Assets D1)",
+            "$ref": "#/components/schemas/lei_code"
+          },
+          "116_Fund_issuer_code_type": {
+            "description": "C0220   1- LEI 9 - None\n\nS.06.02 (old: Assets D1)",
+            "$ref": "#/components/schemas/identification_code_type"
+          },
+          "117_Fund_issuer_name": {
+            "description": "Name of Issuer of Fund  or Share Class\n\nAlphanum\n\nS.06.02 (old: Assets D1)",
+            "type": "string",
+            "maxLength": 255
+          },
+          "118_Fund_issuer_sector": {
+            "description": "NACE code of Issuer of Fund  or Share Class\n\nAlphanum\n\nNACE should be full version for category K i.e. 5 characters without dots. \nAlternatively, 5 characters or the leading letter for sectors other than K.",
+            "$ref": "#/components/schemas/nace_code"
+          },
+          "119_Fund_issuer_group_code": {
+            "description": "LEI of ultimate parent when available, otherwise not reported\n\nAlphanum\n\nS.06.02 (old: Assets D1)",
+            "$ref": "#/components/schemas/lei_code"
+          },
+          "120_Fund_issuer_group_code_type": {
+            "description": "C0260   1- LEI 9 - None\n\nS.06.02 (old: Assets D1)",
+            "$ref": "#/components/schemas/identification_code_type"
+          },
+          "121_Fund_issuer_group_name": {
+            "description": "Name of Ultimate parent of issuer of Fund or Share Class\n\nS.06.02 (old: Assets D1)",
+            "type": "string",
+            "maxLength": 255
+          },
+          "122_Fund_issuer_country": {
+            "description": "Country ISO of Issuer of Fund  or Share Class\n\nISO 3166-1 alpha-2 code\n\nS.06.02 (old: Assets D1)",
+            "$ref": "#/components/schemas/iso_country_code"
+          },
+          "123_Fund_CIC": {
+            "description": "CIC code - Fund  or Share Class (4 digits)\n\nS.06.02 (old: Assets D1)  - Remark:  first two digits are expected to be XL ( not country code)",
+            "$ref": "#/components/schemas/cic_code"
+          },
+          "124_Duration": {
+            "description": "mainly invested in bonds (>50%) - Fund modified Duration (Residual modified duration)\n\nS.06.02 (old: Assets D1) - Residual modified duration",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "125_Accrued_income_(Security Denominated Currency)": {
+            "description": "Amount of accrued income in security denomination currency at report date\n\nControl value as market values provided both including and excluding accrued income.\nThis is at security level.",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "126_Accrued_income_(Portfolio Denominated Currency)": {
+            "description": "Amount of accrued income in portfolio denomination currency at report date\n\nControl value as market values provided both including and excluding accrued income.",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "127_Bond_floor_(convertible_instrument_only)": {
+            "description": "Lowest value of a convertible bond expressed in quotation currency, at current issuer spread\n\nnumber with floating decimal\n\nThe lowest value that convertible bonds can fall to, given the present value of the remaining future cash flows and principal repayment. The bond floor is the value at which the convertible option becomes worthless because the underlying stock price has fallen substantially below the conversion value",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "128_Option_premium_(convertible_instrument_only)": {
+            "description": "Premium of the embedded option of a convertible bond in quotation currency\n\nnumber with floating decimal\n\nThe amount by which the price of a convertible security exceeds the current market value of the common stock into which it may be converted. A conversion premium is the difference between the price of the convertible and the greater of the conversion or straight-bond value.",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "129_Valuation_yield": {
+            "description": "Valuation Yield of the interest rate instrument\n\nnumber with floating decimal\n\nThis data may be used to recalculate yield curve of reference and determine the interest rate shock to be applied. To be discussed",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "130_Valuation_z_spread": {
+            "description": "Issuer spread calculated from Z coupon IRS curve of quotation currency\n\nnumber with floating decimal\n\nThis data may be used to recalculate yield curve of reference and determine the interest rate shock to be applied. To be discussed",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "131_Underlying_asset_category": {
+            "description": "SII definition as per QRT S.06.03\n\nOne of the options in the following closed list shall be used:\n1 - Government bonds\n2 - Corporate bonds\n3L - Listed equity\n3X - Unlisted equity\n4 - Collective Investment Undertakings\n5 - Structured notes\n6 - Collateralised securities\n7 - Cash and deposits\n8 - Mortgages and loans\n9 - Properties\n0 - Other investments (including receivables)\nA – Futures\nB – Call Options\nC – Put Options\nD – Swaps\nE – Forwards\nF – Credit derivatives\nL - Liabilities\n\nplease refer to the S06.03 template specification in RD UE 2015/2450",
+            "$ref": "#/components/schemas/underlying_asset_category"
+          },
+          "132_Infrastructure_investment": {
+            "description": "Type of infrastructure investment according to Type of infrastructure investment according to \nCOMMISSION DELEGATED REGULATION (EU) 2016/467 of 30 September 2015 amending Commission Delegated Regulation (EU) 2015/35 concerning the calculation of regulatory capital requirements for several categories of assets held by insurance and reinsurance undertakings and COMMISSION DELEGATED REGULATION (EU) 2017/1542 as of 8 June 2017 amending Delegated Regulation (EU) 2015/35 concerning the calculation of regulatory capital requirements for certain categories of assets held by insurance and reinsurance undertakings (infrastructure corporates).\n\n0 - Not assessed\n1 - Debt on eligible Infrastructure project\n2 - Equity on  eligible infrastructure project \n3 - Debt on eligible Infrastructure corporate\n4 - Equity on eligible infrastructure corporate\n5 - Non eligible\n\nData used to calculate reduced SCR for investments on Infrastructure project. The asset manager should conduct the diligence to determine if the instrument is eligible and what is the kind of risk supported by the investor ( equity or debt).   Eligible instruments can be infrastructure projects as well as  infrastructure corporates.\n\nIndicative assessment should not exempt the assurance company from their duties. This field should be filled with \"not assessed for other instruments than infrastrcure investments\".",
+            "$ref": "#/components/schemas/infrastructure_investment"
+          },
+          "133_custodian_name": {
+            "description": "Name of the custodian of the seggregated account\n\ntext\n\nS.06.02 (old: Assets D1)",
+            "type": "string",
+            "maxLength": 255
+          },
+          "134_type1_private_equity_portfolio_eligibility": {
+            "description": "Eligibility of the investment to art 168a of the regulation UE DR 2019/981\n\nInt (1)\n\"0\" = Not assessed\n\"1\" = elligible for re-classification as equity type 1\n\"2\" = not elligible for re-classification as equity type 1\n\nThis assesmement is based on the criterias set up in art 168a of Commission Delegated Regulation (EU) 2019/981 (the Amending Regulation), which amends the Solvency II Delegated Regulation ((EU) 2015/35). It is only indicative. Insurers shall build up a portfolio that will be elligible on the basis of this first assesment made by the asset manager without considering the beta of the issuer.\n\nIndicative assessment should not exempt the assurance company from their duties. This field should be filled with \"0\" in case this analysis is not relevant.",
+            "$ref": "#/components/schemas/type1_private_equity_eligibility"
+          },
+          "135_type1_private_equity_issuer_beta": {
+            "description": "Beta of the issuer of the private equity calculated according to art 168a of the regulation UE DR 2019/981\n\nnumber with floating decimal\n\nThis datapoint is required to support the insurance company while building a portfolio of private equity investments that will respect 168a of the regulation UE DR 2019/981.",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "137_Counterparty_sector": {
+            "description": "Classification of the issuer or counterparty according to IORP II regulation based on FINREP breakdown ( ESA 2010) and EIOPA specifications\n\nAlphanumeric (2)\n1 – central bank (ESA 2010 sector S.121)\n2 – deposit-taking corporations except the central bank (ESA 2010 sector S.122)\n3 – money market funds (ESA 2010 sector S.123)\n4 – investment funds other than money market funds (ESA 2010 sector S.124)\n5 – other financial intermediaries, except insurance corporations and pension funds (excluding financial vehicle corporations engaged in securitisation transactions) + financial auxiliaries + captive financial institutions and money lenders (ESA 2010 sector S.125 excluding FVCs + ESA 2010 sector S.126 + ESA 2010 sector S.127) \n6 – financial vehicle corporations engaged in securitisation transactions (a subdivision of ESA 2010 sector S.125) \n7 – insurance corporations (ESA 2010 sector S.128)\n8 – pension funds (ESA 2010 sector S.129)\n9 – non-financial corporations (ESA 2010 sector S.11)\n10 – general government (ESA 2010 sector S.13)\n11 – households and non-profit institutions serving households (ESA 2010 sector S.14 + ESA 2010 sector S.15) \n12 – for cash & deposit only (CIC xx7x) : central bank (ESA 2010 sector S.121), deposit-taking corporations except the central bank (ESA 2010 sector S.122) and money market funds (ESA 2010 sector S.123) \n13 – for cash & deposit only (CIC xx7x) : non-MFIs, not included under 12\n\nFor documentation on the ESA 2010 (chapter 2): https://ec.europa.eu/eurostat/documents/3859598/5925693/KS-02-13-269-EN.PDF\n\nThe purpose of this data point is to allow Pension Funds to produce their Prudential Quantitative Reports according to the directive EC 2016/2341 (IORP II directive). It complete the set of the data used for S2 requirements.\n\nIt must be filled for loans and mortgages (CIC xx8x) and deposit (CIC xx7x).\n\nIt shall not be filled for real assets (CIC xx9x) or if the financial instrument has an ISIN codification (data point dp15 of the TPT template = \"1\"). \n\nits contend can be derived from other datapoints of the TPT (data point 54_Economic_sector in most cases but not always) :\nfor government bonds  \ndp137=10\nfor securitzation instruments \ndp137=6\nfor deposit instruments \n- if dp54 = \"Kxxxx\" or \"O\" then dp 137=\"12\"\n- in the other cases dp137=\"13\"\nin the other cases :\n- if dp54 = \"K6411\" then dp 137=\"1\"\n- if dp54 = \"K6419\" then dp 137=\"2\"\n- if dp54 = \"K6630\" then dp137=\"3\" for Money market funds (CIC xx43) or dp137=\"4\" for other funds (CIC xx4x)\n- if dp54 = \"K6619\" or \"K649x\" then dp137=\"5\"\n- if dp54 = \"K651*\" or \"K652*\" then dp137=\"7\"\n- if dp54 = \"K653*\" then dp137=\"8\"\n- if dp54 = \"T\" then dp137=\"11\"\n- if dp54 <> \"Kxxxx\" or \"T\" then dp137=\"9\"",
+            "$ref": "#/components/schemas/counterparty_sector"
+          },
+          "138_Collateral_eligibility": {
+            "description": "Eligibility of the collateral according to solvency regulation (RD UE 2015/35 art 176.5 and related art197, art214)\n\n0 - Not assessed or no collateral\n1 - Compliant with art 214 and art 197.1a and art 197 1b\n2 - Compliant with art 214 and art 197.1a\n3 - Compliant with art 214.\n4 - Not elligible\n\nIndicate if a bond has a collateral eligible under art 176.5 S2 regulation. \nFor covered bonds (CIC27) or securitizations (art 178) this data point should be \"0\".",
+            "$ref": "#/components/schemas/collateral_eligibility"
+          },
+          "139_Collateral_Market_valuation_in_portfolio_currency": {
+            "description": "Market valuation of the collateral in portfolio currency\n\nnumber with floating decimal\n\nto be filled if dp 138 is \"1\" \"2\" or \"3\"",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "8b_Total_number_of_shares": {
+            "description": "Total number of shares",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "17b_Asset_liability": {
+            "description": "Asset liability",
+            "type": "string"
+          },
+          "58b_Nature_of_the_tranche": {
+            "description": "Nature of the tranche",
+            "type": "string"
+          },
+          "94b_Vega": {
+            "description": "Vega",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "105a_SCR_mrkt_FX_up_weight_over_NAV": {
+            "description": "SCR market FX up weight over NAV",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "105b_SCR_mrkt_FX_down_weight_over_NAV": {
+            "description": "SCR market FX down weight over NAV",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "123a_Fund_custodian_country": {
+            "description": "Fund custodian country",
+            "$ref": "#/components/schemas/iso_country_code"
+          }
+        },
+        "required": [
+          "1_Portfolio_identifying_data",
+          "2_Type_of_identification_code_for_the_fund_share_or_portfolio",
+          "3_Portfolio_name",
+          "4_Portfolio_currency_(B)",
+          "5_Net_asset_valuation_of_the_portfolio_or_the_share_class_in_portfolio_currency",
+          "6_Valuation_date",
+          "7_Reporting_date",
+          "8_Share_price",
+          "9_Cash_ratio",
+          "10_Portfolio_modified_duration",
+          "11_Complete_SCR_delivery",
+          "12_CIC_code_of_the_instrument",
+          "14_Identification_code_of_the_instrument",
+          "15_Type_of_identification_code_for_the_instrument",
+          "17_Instrument_name",
+          "19_Nominal_amount",
+          "21_Quotation_currency_(A)",
+          "22_Market_valuation_in_quotation_currency_(A)",
+          "23_Clean_market_valuation_in_quotation_currency_(A)",
+          "24_Market_valuation_in_portfolio_currency_(B)",
+          "25_Clean_market_valuation_in_portfolio_currency_(B)",
+          "26_Valuation_weight",
+          "27_Market_exposure_amount_in_quotation_currency_(A)",
+          "28_Market_exposure_amount_in_portfolio_currency_(B)",
+          "30_Market_exposure_in_weight",
+          "32_Interest_rate_type",
+          "33_Coupon_rate",
+          "38_Coupon_payment_frequency",
+          "39_Maturity_date",
+          "40_Redemption_type",
+          "41_Redemption_rate",
+          "46_Issuer_name",
+          "47_Issuer_identification_code",
+          "48_Type_of_identification_code_for_issuer",
+          "52_Issuer_country",
+          "53_Issuer_economic_area",
+          "54_Economic_sector",
+          "55_Covered_not_covered",
+          "59_Credit_quality_step",
+          "63_Effective_date_of_instrument",
+          "90_Modified_duration_to_maturity_date",
+          "92_Credit_sensitivity"
+        ]
+      }
+    }
+  }
+}

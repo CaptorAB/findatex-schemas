@@ -13,7 +13,8 @@
     "TPT"
   ],
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "test": "vitest run --reporter=verbose"
   },
   "dependencies": {
     "ajv": "^8.12.0",
@@ -26,8 +27,10 @@
   "devDependencies": {
     "@types/json-schema": "^7",
     "@types/node": "^20",
-    "ts-node": "^10",
-    "currency-codes": "^2"
+    "@vitest/ui": "^3.2.4",
+    "ajv-cli": "^5.0.0",
+    "currency-codes": "^2",
+    "vitest": "^3.2.4"
   },
   "repository": {
     "type": "git",
