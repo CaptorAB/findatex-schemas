@@ -46,23 +46,23 @@ describe("TPT Schema Validation", () => {
       }
       expect(isValid).toBe(true);
     });
+  });
 
-    jsonTptFiles.forEach((filename) => {
-      it(`should validate ${filename} as json file`, () => {
-        const fileContent = fs.readFileSync(
-          path.join(__dirname, "../examples", filename),
-          "utf8"
-        );
-        const data = JSON.parse(fileContent);
+  jsonTptFiles.forEach((filename) => {
+    it(`should validate ${filename} as json file`, () => {
+      const fileContent = fs.readFileSync(
+        path.join(__dirname, "../examples", filename),
+        "utf8"
+      );
+      const data = JSON.parse(fileContent);
 
-        const isValid = validate(data);
+      const isValid = validate(data);
 
-        if (!isValid) {
-          console.error(`Validation errors for ${filename}:`, validate.errors);
-        }
+      if (!isValid) {
+        console.error(`Validation errors for ${filename}:`, validate.errors);
+      }
 
-        expect(isValid).toBe(true);
-      });
+      expect(isValid).toBe(true);
     });
   });
 
@@ -78,6 +78,7 @@ describe("TPT Schema Validation", () => {
         "not_a_number", // Invalid number
     };
 
+    console.log("--------------------------------");
     const isValid = validate(invalidData);
     expect(isValid).toBe(false);
     expect(validate.errors).toBeDefined();

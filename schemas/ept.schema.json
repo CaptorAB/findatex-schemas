@@ -259,10 +259,7 @@
           "00001_EPT_Version": {
             "description": "This field specifies the version of the template and is used by the recipient to understand the number of fields expected, their labelling and order.\r\nV21 indicates that the file supports both EU and UK KIDs\r\nV21UK indicates that the file supports a UK KID but not an EU KID\r\nV21 or V21UK",
             "type": "string",
-            "enum": [
-              "V21",
-              "V21UK"
-            ]
+            "enum": ["V21", "V21UK"]
           },
           "00002_EPT_Producer_Name": {
             "description": "If the manufacturer has outsourced the production of  the EPT to another party responsible for the production and publication of the EPT data set, the party  should be identified in this field.\r\nThis field enables firms to report EPT on behalf of an Issuer/Manufacturer. This datapoint may be used by users who wish to exchange information about the producer of the file in case it is different from the manufacturer.\r\nAlphanum (max 255)",
@@ -283,34 +280,22 @@
           "00006_EPT_Data_Reporting_Narratives": {
             "description": "Specifies if the Narratives section has been completed in the current EPT.\r\nIf set to \"N\" then disregard the \"mandatory\", \"conditional\" or \"optional\" specification of the corresponding sections and the corresponding fields must be empty. The narratives section is necessary in case the insurer produces its own KID according to art. 10(a) RTS or produces its own SID according to Art. 10(b) RTS.\r\nY/N",
             "type": "string",
-            "enum": [
-              "Y",
-              "N"
-            ]
+            "enum": ["Y", "N"]
           },
           "00007_EPT_Data_Reporting_Costs": {
             "description": "Specifies if the Costs section has been completed in the current EPT.\r\nIf set to \"N\" then disregard the \"mandatory\", \"conditional\" or \"optional\" specification of the corresponding sections and the corresponding fields must be empty.\r\nY/N",
             "type": "string",
-            "enum": [
-              "Y",
-              "N"
-            ]
+            "enum": ["Y", "N"]
           },
           "00008_EPT_Data_Reporting_Additional_Requirements_German_MOPs": {
             "description": "Specifies if the section \"Additional information required for German MOPs\" has been completed in the current EPT.\r\nIf set to \"N\" then disregard the \"mandatory\", \"conditional\" or \"optional\" specification of the corresponding sections and the corresponding fields must be empty. The section 06xxx is required for all products, e.g. funds, structured products, sold as underlying options within German MOPs. It contains parameters on products that insurers require to perform mandatory calculations  in order to fulfil the MOPs regulatory requirements in the German market\r\nY/N",
             "type": "string",
-            "enum": [
-              "Y",
-              "N"
-            ]
+            "enum": ["Y", "N"]
           },
           "00009_EPT_Additional_Information_Structured_Products": {
             "description": "Specifies if the section \"Additional information required for structured PRIIPs\" has been completed in the current EPT posting.\r\nIf set to \"N\" then disregard the \"mandatory\", \"conditional\" or \"optional\" specification of the corresponding sections and the corresponding fields must be empty.\r\nY/N",
             "type": "string",
-            "enum": [
-              "Y",
-              "N"
-            ]
+            "enum": ["Y", "N"]
           },
           "00010_Portfolio_Manufacturer_Name": {
             "description": "Name of the management company of the UCITS or AIF or the manufacturer of the structured product.\r\nConsistent with Article 4(4) PRIIPs Regulation.\r\nAlphanum (max 255)",
@@ -346,18 +331,7 @@
           "00040_Type_Of_Identification_Code_For_The_Fund_Share_Or_Portfolio": {
             "description": "Codification chosen to identify the share of the CIS\r\nConsistent with MiFID and  Solvency II   approaches\r\n In case the LEI is used then the type shall be \"9\".\r\nOne of the options in the following closed list to be used:\r\n1 - ISO 6166 for ISIN code\r\n2 - CUSIP (The Committee on Uniform Securities Identification Procedures number assigned by the CUSIP Service Bureau for U.S. and Canadian companies)\r\n3 - SEDOL (Stock Exchange Daily Official List for the London Stock Exchange)\r\n4 – WKN (Wertpapier Kenn-Nummer, the alphanumeric German identification number)\r\n5 - Bloomberg Ticker (Bloomberg letters code that identify a company's securities)\r\n6 - BBGID (The Bloomberg Global ID)\r\n7 - Reuters RIC (Reuters instrument code)\r\n8 – FIGI (Financial Instrument Global Identifier)\r\n9 - Other code by members of the Association of National Numbering Agencies\r\n99 - Code attributed by the undertaking",
             "type": "number",
-            "enum": [
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
-              7,
-              8,
-              9,
-              99
-            ]
+            "enum": [1, 2, 3, 4, 5, 6, 7, 8, 9, 99]
           },
           "00050_Portfolio_Name": {
             "description": "Name of the portfolio or name of the CIS\r\nPortfolio or fund or share class name\r\nconsistent with MiFID and  Solvency II approach\r\nAlphanum (max 255)",
@@ -391,10 +365,7 @@
           "00110_Is_An_Autocallable_Product": {
             "description": "Indication of whether the product is an autocallable\r\nSeparate rules apply to autocallable structured products. This data point is only used in case the insurance company need to revamp the specific information.\r\n\r\nsee Annex V, Number 17 Template C: PRIIPs referred to in point 76c of Annex VI, Annex VI, number 76c, Annex VII, Table 1 for PRIIPs referred to in point 76c of Annex VI\r\nY/N",
             "type": "string",
-            "enum": [
-              "Y",
-              "N"
-            ]
+            "enum": ["Y", "N"]
           },
           "00120_Reference_Language": {
             "description": "Language in which the linked website with past performance, the historical performance (02190_Past_Performance_Link and 02200_Previous_Performance_Scenarios_Calculation_Link) and all narratives/texts of this set of data are written\r\nconditional for products in the category described in Annex VIII number 1 (a) and (b) or  those requiring narratives, i.e. 00006_EPT_Data_Reporting_Narratives=Y \r\n\r\nThe different translations of the narratives are required for underlying options offered  in Germany or Italy. The translations should not me generated automatically but only if the market requires the translation in order to fulfil the requirements of the PRIIPs Regulation.\r\nISO 639-2",
@@ -403,17 +374,7 @@
           "01010_Valuation_Frequency": {
             "description": "Number of valuation days per year for the portfolio or fund or share class.\r\nValuation frequency used for MRM calculation and performance scenarios. This corresponds to the number of valuation days of the fund, share class or portfolio, per year.\r\nSee Annex II, number 12 PRIIPs RTS   Annex IV, number 9 PRIIPs RTS\r\nFrequency (\"0\" = other than /\"1\"= annual  / \"2\"= biannual / \"4\"=quarterly / \"12\"= monthly / \"24\"=bimonthly / \"52\"=weekly / \"104\"=biweekly, \"252\"=daily)",
             "type": "number",
-            "enum": [
-              0,
-              1,
-              2,
-              4,
-              12,
-              24,
-              52,
-              104,
-              252
-            ]
+            "enum": [0, 1, 2, 4, 12, 24, 52, 104, 252]
           },
           "01020_Portfolio_VEV_Reference": {
             "description": "VEV of the portfolio/ share class\r\nMandatory if Portfolio_PRIIPs_Category = 2 or 3\r\nSee Annex II, Numbers 13-17 PRIIPs RTS\r\nfloating decimal",
@@ -422,10 +383,7 @@
           "01030_IS_Flexible": {
             "description": "Indicator to alert if the portfolio  is flexible. If the annex II number 14 of the PRIIPs RTS applies\r\nSee Annex II, Number 14 RTS\r\nY / N",
             "type": "string",
-            "enum": [
-              "Y",
-              "N"
-            ]
+            "enum": ["Y", "N"]
           },
           "01040_Flex_VEV_Historical": {
             "description": "VaR equivalent volatility of the portfolio\r\nIntermediate result for control. M if IS_Flexible is set to Y \r\n\r\nSee Annex II, Number 14(a)(i) PRIIPs RTS\r\nfloating decimal",
@@ -438,10 +396,7 @@
           "01060_IS_Risk_Limit_Relevant": {
             "description": "Indicator to alert if there is a relevant risk limit for flexible funds\r\nM if IS_Flexible is set to Y \r\n\r\nSee Annex II, Number 14 PRIIPs RTS\r\nY/N",
             "type": "string",
-            "enum": [
-              "Y",
-              "N"
-            ]
+            "enum": ["Y", "N"]
           },
           "01070_Flex_VEV_Risk_Limit": {
             "description": "VaR equivalent volatility of the risk limit of the portfolio\r\nM if IS_Risk_Limit_Relevant is set to Y\r\n\r\nSee Annex II, Number 14(a)(iii) PRIIPs RTS\r\nfloating decimal",
@@ -450,10 +405,7 @@
           "01080_Existing_Credit_Risk": {
             "description": "Indicator to alert if there is a credit risk\r\nCredit risk exists only when NAV of the fund is guaranteed and the valuation of the guarantee exceed 10% of the NV without any collateralisation. Cleared OTC or listed derivatives entail no credit risk for the purpose of CRM calculation\r\n\r\nSee Annex II, numbers 30-6 PRIIPs RTS\r\nY/N",
             "type": "string",
-            "enum": [
-              "Y",
-              "N"
-            ]
+            "enum": ["Y", "N"]
           },
           "01090_SRI": {
             "description": "Summary risk indicator of the portfolio\r\nThe SRI of the portfolio as displayed in the portfolio KID. If the SRI was adjusted (Annex III, part 3, Number 52a RTS), the adjusted value has to be reported\r\n\r\nsee Art. 14(c) , Art. 3 and Annexes II and III PRIIPs RTS\r\nnumber [1 - 7]",
@@ -464,10 +416,7 @@
           "01095_IS_SRI_Adjusted": {
             "description": "Whether or not the manufacturer has manually increased the SRI\r\nAccording to Annex II, part 3 Nr. 52 a correction of the SRI is possible.\r\nY/N",
             "type": "string",
-            "enum": [
-              "Y",
-              "N"
-            ]
+            "enum": ["Y", "N"]
           },
           "01100_MRM": {
             "description": "Market risk measure of the portfolio\r\nElement B in Annex II requires a separate description of market and credit risk,\r\nsee Art. 14(c) and Art. 3 and Annexes II and III PRIIPs RTS\r\nnumber [1 - 7]",
@@ -488,10 +437,7 @@
           "01125_Has_A_Contractual_Maturity_Date": {
             "description": "Indicates the existence of a contractual maturity date of the portfolio\r\nY/N",
             "type": "string",
-            "enum": [
-              "Y",
-              "N"
-            ]
+            "enum": ["Y", "N"]
           },
           "01130_Maturity_Date": {
             "description": "Date of maturity\r\nMandatory if Has_A_Contractual_Maturity_Date is set to Y, required to calculate the remaining time to maturity as a RHP\r\nYYYY-MM-DD         ISO 8601",
@@ -501,11 +447,7 @@
           "01140_Liquidity_Risk": {
             "description": "Risk of liquidity at the level of the fund or the portfolio, also used for narrative\r\nM = material liquidity risk, I = illiquid, L = no liquidity issue.\r\nM or I, use wording in picture box Annex III, if L no narrative to drive. Liquidity will have to be considered at the level of the insurance product and of the underlying investment. This data is only linked with the underlying investment. \r\n\r\nSee   Art.14 (c ),  Art.3.2 (b) and  Annex II, Part 4 PRIIPs RTS\r\n\"M\", \"I\", \"L\"",
             "type": "string",
-            "enum": [
-              "M",
-              "I",
-              "L"
-            ]
+            "enum": ["M", "I", "L"]
           },
           "02010_Portfolio_Return_Unfavourable_Scenario_1_Year": {
             "description": "Average annual return of the portfolio, fund, share class corresponding to the unfavourable scenario, after one year\r\nMandatory if RHP >1 year. \r\nautocallables only if called after 1y\r\n\r\nSee Annex IV PRIIPs RTS, However, the performance scenarios  shall be calculated with entry costs retained by the funds and net of all other applicable costs. All other entry costs should not be included in the calculation.\r\nfloating decimal. 100%=1,     5%= 0,05 ; signed amount",
@@ -522,10 +464,7 @@
           "02032_Autocall_Applied_Unfavourable_Scenario": {
             "description": "Indicate if the call has been applied in the unfavourable scenario\r\nY/N",
             "type": "string",
-            "enum": [
-              "Y",
-              "N"
-            ]
+            "enum": ["Y", "N"]
           },
           "02035_Autocall_Date_Unfavourable_Scenario": {
             "description": "Call date applied in the unfavourable scenario\r\nConditional upon datapoint 02032_Autocall_Applied_Unfavourable_Scenario\r\n\r\nsee Annex V, Number 17 Template C: PRIIPs referred to in point 76c of Annex VI (Autocallables) PRIIPs RTS\r\nYYYY-MM-DD         ISO 8601",
@@ -547,10 +486,7 @@
           "02062_Autocall_Applied_Moderate_Scenario": {
             "description": "Indicate if the call has been applied in the moderate scenario\r\nY/N",
             "type": "string",
-            "enum": [
-              "Y",
-              "N"
-            ]
+            "enum": ["Y", "N"]
           },
           "02065_Autocall_Date_Moderate_Scenario": {
             "description": "Call date applied in the moderate scenario\r\nConditional upon data point 02062_Autocall_applied_moderate_scenario\r\n\r\nSee Annex V, Number 17 Template C: PRIIPs referred to in point 76c of Annex VI (Autocallables)\r\nYYYY-MM-DD         ISO 8601",
@@ -572,10 +508,7 @@
           "02092_Autocall_Applied_Favourable_Scenario": {
             "description": "Indicate if the call has been applied in the favourable scenario\r\nY/N",
             "type": "string",
-            "enum": [
-              "Y",
-              "N"
-            ]
+            "enum": ["Y", "N"]
           },
           "02095_Autocall_Date_Favourable_Scenario": {
             "description": "Call date applied in the favourable scenario\r\nConditional upon datapoint 02092_Autocall_applied_favourable_scenario\r\n\r\nAnnex V, Number 17 Template C: PRIIPs referred to in point 76c of Annex VI (Autocallables)\r\nYYYY-MM-DD         ISO 8601",
@@ -597,10 +530,7 @@
           "02122_Autocall_Applied_Stress_Scenario": {
             "description": "Indicate if the call has been applied\r\nY/N",
             "type": "string",
-            "enum": [
-              "Y",
-              "N"
-            ]
+            "enum": ["Y", "N"]
           },
           "02125_Autocall_Date_Stress_Scenario": {
             "description": "Call date corresponding to the stress scenario of autocallables\r\nConditional upon data point 02122_Autocall_Applied_Stress_Scenario\r\n\r\nAnnex V, Number 17 Template C: PRIIPs referred to in point 76c of Annex VI (Autocallables)\r\nYYYY-MM-DD         ISO 8601",
@@ -634,10 +564,7 @@
           "02185_Portfolio_Past_Performance_Disclosure_Required": {
             "description": "Does this product fulfil conditions sets in  Annex VIII number 1 (a) and (b) ?\r\nReference Art. 8(3) RTS\r\nY/N",
             "type": "string",
-            "enum": [
-              "Y",
-              "N"
-            ]
+            "enum": ["Y", "N"]
           },
           "02190_Past_Performance_Link": {
             "description": "Reference Art. 8(3) RTS\r\nConditional upon data point 02185_Portfolio_Past_Performance_Disclosure_Required.\r\nThe link should provide access to the past performance disclosure in the local language. It should be the same as the one displayed in the PRIIPs KID of the underlying.\r\nstring",
@@ -680,10 +607,7 @@
           "03050_One_Off_Costs_Portfolio_Sliding_Exit_Cost_Indicator": {
             "description": "Indicates whether there is a sliding exit cost or not\r\nAnnex VI part 1 points 1 to 3\r\nAnnex VI part 1  points 27 to 30, 34 and 36 to 46\r\nAnnex VII table 2\r\nY/N",
             "type": "string",
-            "enum": [
-              "Y",
-              "N"
-            ]
+            "enum": ["Y", "N"]
           },
           "03060_Ongoing_Costs_Management_Fees_And_Other_Administrative_Or_Operating_Costs": {
             "description": "See PRIIPs definition as a % of NAV of the portfolio, the funds or the share class / per annum. Management fees and other administrative or operating costs\r\nTotal fees applied, including look through for fund of funds / custodian fees / management fees. \r\n\r\nAnnex VI part 1 points 4 to 5\r\nfloating decimal. 100%=1,     5%= 0,05",
@@ -696,10 +620,7 @@
           "03090_Existing_Incidental_Costs_Portfolio": {
             "description": "Indicates whether there are existing performance fees or carried interest\r\nY/N",
             "type": "string",
-            "enum": [
-              "Y",
-              "N"
-            ]
+            "enum": ["Y", "N"]
           },
           "03095_Incidental_Costs": {
             "description": "See PRIIPs definition as a % of NAV of the portfolio, the funds or the share class / per annum\r\nconditional upon data point 03090_Existing_Incidental_Costs_Portfolio\r\nas per regulation. Mandatory if item 03090_Existing_Incidental_Costs_Portfolio is set to Y\r\n\r\nAnnex VI part 1 points 24 to 26\r\nfloating decimal. 100%=1,     5%= 0,05",
@@ -708,10 +629,7 @@
           "04020_Comprehension_Alert_Portfolio": {
             "description": "cf Art.14a + annex 1\r\nArt.14(a) and Annex I\r\nY/N",
             "type": "string",
-            "enum": [
-              "Y",
-              "N"
-            ]
+            "enum": ["Y", "N"]
           },
           "04030_Intended_Target_Market_Retail_Investor_Portfolio": {
             "description": "Text in reference language, as proposed by the asset manager\r\n\r\nThe description of the type of retail investor to whom the PRIIP is intended to be marketed in the section entitled ‘What is this product?’ of the key information document shall include information on the target retail investors identified by the PRIIP manufacturer, in particular depending on the needs, characteristics and objectives of the type of client for whom the PRIIPs is compatible. This determination shall be based upon the ability of retail investors to bear investment loss and their investment horizon preferences, their theoretical knowledge of, and past experience with PRIIPs, the financial markets as well as the needs, characteristics and objectives of potential end clients.\r\nArt. 2.3 & 14(b)\r\nstring [4000]",
@@ -741,10 +659,7 @@
           "04080_Capital_Guarantee": {
             "description": "Boolean to identify whether the portfolio has a general capital guarantee or not.\r\nThe fields following 41-47, as well as field 04080_Capital_Guarantee shall only be filled when answer is \"Y\". If \"no\", Element H of Annex 3 Point 7 applies and fields 01141-47 do not have to be populated\r\n\r\nAnnex III point 4c and 7, element G\r\nY/N",
             "type": "string",
-            "enum": [
-              "Y",
-              "N"
-            ]
+            "enum": ["Y", "N"]
           },
           "04081_Capital_Guarantee_Level": {
             "description": "Capital Guarantee level. Minimum amount will be paid at redemption in%. Cf annex 3, point 7, Element F\r\nrequired then capital guarantee is set to YES\r\n\r\nAnnex III, point 7, Element F\r\nfloating decimal. 100%=1,     5%= 0,05",
@@ -783,10 +698,7 @@
           "04089_Was_Benchmark_Used_Performance_Calculation": {
             "description": "Boolean to identify whether a benchmark or proxy was used for performance calculation in the unfavourable, moderate and favourable scenarios.\r\nConditional upon Portfolio_PRIIPs_Category =2, except those referred to in point 15 of Annex IV\r\nAnnex V, Part 1, point 3 and Part 2, Element C\r\nY/N",
             "type": "string",
-            "enum": [
-              "Y",
-              "N"
-            ]
+            "enum": ["Y", "N"]
           },
           "04090_Portfolio_Performance_Fees_Carried_Interest_Narrative": {
             "description": "Describes the incidental costs taken under specific conditions.\r\nSee Art. 5(3)(c) RTS,  Annex VII, Table 2 RTS. Both carried interest and performance fees should be included in the narrative\r\nstring  [300]",
@@ -811,10 +723,7 @@
           "04150_Do_Costs_Depend_On_Invested_Amount": {
             "description": "Indicates whether the costs depend on the invested amount.\r\nYes if the costs of the portfolio depend on the invested amount \r\n\r\nSee Annex VII, 2nd table on costs\r\nY/N",
             "type": "string",
-            "enum": [
-              "Y",
-              "N"
-            ]
+            "enum": ["Y", "N"]
           },
           "04160_Cost_Dependence_Explanation": {
             "description": "Describes the dependence of costs on the invested amount, not more than 150 characters.\r\nConditional upon Do_Costs_Depend_On_Invested_Amount=Y\r\n\r\nIf the costs depend on the invested amount, the kind of dependence should be explained after the second cost table\r\n\r\nSee Annex VII, 2nd table on costs\r\nstring[150]",
@@ -841,10 +750,7 @@
           "06040_Existing_Capital_Preservation": {
             "description": "Identifies if a capital preservation method is used (Y) or not (N).\r\nMandatory for German market. This field shall be used if the loss of a fund over a certain time period (e.g. monthly or annually) is limited due to a (partial) guarantee  (e.g. 75% or 90%). It might be different from the field 04081_Capital_Guarantee_Level which specifies the level of guarantee at the RHP.\r\nY/N",
             "type": "string",
-            "enum": [
-              "Y",
-              "N"
-            ]
+            "enum": ["Y", "N"]
           },
           "06050_Capital_Preservation_Level": {
             "description": "100% minus the maximum possible loss in percentage of its market value.\r\nMandatory for German market. The field 06050_Maximum_Loss  shall only be filled when answer is 'Y' in 06040_Has_Capital_Preserveration.This field shall be used if the loss of a fund over a certain time period (e.g. monthly or annually) is limited due to a (partial) guarantee  (e.g. 75% or 90%). It might be different from the field 04081_Capital_Guarantee_Level which specifies the level of guarantee at the RHP.\r\nfloating decimal. 100%=1,      80%= 0,80",
@@ -855,17 +761,7 @@
             "oneOf": [
               {
                 "type": "number",
-                "enum": [
-                  0,
-                  1,
-                  2,
-                  4,
-                  12,
-                  24,
-                  52,
-                  104,
-                  252
-                ]
+                "enum": [0, 1, 2, 4, 12, 24, 52, 104, 252]
               },
               {
                 "type": "string",
@@ -876,10 +772,7 @@
           "06070_Uses_PI": {
             "description": "Identifies if PI (Portfolio Insurance including CPPI Constant Proportion Portfolio Insurance)  is used (Y) or not (N) for capital preservation.\r\nMandatory for German market\r\nY/N",
             "type": "string",
-            "enum": [
-              "Y",
-              "N"
-            ]
+            "enum": ["Y", "N"]
           },
           "06080_Multiplier_PI": {
             "description": "Gives the maximum multiplier value if PI algorithm is used.\r\nThis field shall only be filled when answer is \"Y\" in 06070_Uses_PI. Mandatory for German market\r\nfloating decimal. 100%=1,     5%= 0,05",
@@ -937,11 +830,7 @@
           "08010_UK_PRIIP_Or_UCITS_Or_Both_data_delivery": {
             "description": "Indicates if the line contains UK PRIIPs data, UCITS data or Both\r\nMandatory if providing UK data otherwise leave blank\r\nApply the \"mandatory\", \"conditional\" or \"optional\" specification as follows:\r\n- EU-only distribution leave this section blank.\r\n- EU and UK distribution include this section.\r\n- UK-only distribution include this section and leave fields not marked \"x\" in column H blank.\r\nIn this section apply the \"mandatory\", \"conditional\" or \"optional\" specification according to the setting in 08010 as follows:\r\n- UKPRIIP - complete the \"UK PRIIPs data\" section and leave the \"Specific UCITS data for UK insurers opting for Art 14.2 for MOP\" section blank.\r\n- UCITS - complete the \"Specific UCITS data for UK insurers opting for Art 14.2 for MOP\" section and leave the \"UK PRIIPs data\" section blank.\r\n- Both - complete both the \"UK PRIIPs data\" section and the \"Specific UCITS data for UK insurers opting for Art 14.2 for MOP\" section.\r\nUKPRIIP/UCITS/Both",
             "type": "string",
-            "enum": [
-              "UKPRIIP",
-              "UCITS",
-              "Both"
-            ]
+            "enum": ["UKPRIIP", "UCITS", "Both"]
           },
           "08020_UK_Ongoing_Costs_Portfolio_Transaction_Costs": {
             "description": "See UK PRIIPs definition for PRIIPs other than UCITS/NURS.\r\nUCITS/NURS may follow alternative definitions.\r\nExpress as a % of NAV of the portfolio, the funds or the share class / per annum.\r\nTransaction costs calculated as per UK Annex VI part 1 points 7 to 23C for UK PRIIPs. UCITS/NURS may use an alternative methodology.\r\nUK version of 03080.\r\nNote that in Annex VI, UK RTS differs to EU RTS in that: point 8a is absent, point 11(c) is different, and point 11A is added.\r\nfloating decimal. 100%=1,     5%= 0,05",
@@ -950,11 +839,7 @@
           "08030_UK_Transactions_costs_methodology": {
             "description": "1. New PRIIPS methodology\r\n2. Full UK PRIIPS methodology \r\n3. Other methodology\r\nConditional on giving a figure in 08020\r\nIndicate the option chosen by the Asset Manager to calculate transaction costs for UCITS/NURS\r\n1, or 2, or 3",
             "type": "number",
-            "enum": [
-              1,
-              2,
-              3
-            ]
+            "enum": [1, 2, 3]
           },
           "08040_UK_Anti_Dilution_Benefit_Derived": {
             "description": "Information about the total benefit derived from an anti-dilution mechanism\r\nTo be provided as part of the narrative description display for transaction costs in the KID.\r\n\r\nUK Annex VI point 11A\r\nstring[200]",
@@ -1036,10 +921,7 @@
           "08190_UCITS_Existing_Performance_Fees": {
             "description": "Indicates whether there are existing performance fees or carried interest\r\nUsed by insurer only in the case Article 13 point 3 applies\r\nY/N",
             "type": "string",
-            "enum": [
-              "Y",
-              "N"
-            ]
+            "enum": ["Y", "N"]
           },
           "08200_UCITS_Performance_Fees": {
             "description": "See UCITS definition as a % of NAV of the portfolio, the funds or the share class / per annum\r\nConditional on 08190 set to Y\r\nUsed by insurer only in the case Article 13 point 3 applies\r\nfloating decimal. 100%=1, 5%= 0,05",
