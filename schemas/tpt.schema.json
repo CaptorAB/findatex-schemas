@@ -425,6 +425,10 @@
         "description": "NACE (Nomenclature statistique des activités économiques) economic sector classification. Full 5-character version for category K (financial sector), single letter for non-financial sectors per EIOPA documentation.",
         "type": "string"
       },
+      "nace_2_1_code": {
+        "description": "NACE V2.1 (Nomenclature statistique des activités économiques) economic sector classification. Full 5-character version for category K (financial sector), single letter for non-financial sectors per EIOPA documentation.",
+        "type": "string"
+      },
       "empty_string": {
         "description": "Empty string type for fields that can accept empty string values",
         "type": "string",
@@ -446,7 +450,7 @@
             "maxLength": 255
           },
           "2_Type_of_identification_code_for_the_fund_share_or_portfolio": {
-            "description": "Codification chosen to identify the share of the CIS\n\nOne of the options in the following closed list to be used:\n1 - ISO 6166 for ISIN code\n2 - CUSIP (The Committee on Uniform Securities Identification Procedures number assigned by the CUSIP Service Bureau for U.S. and Canadian companies)\n3 - SEDOL (Stock Exchange Daily Official List for the London Stock Exchange)\n4 – WKN (Wertpapier Kenn-Nummer, the alphanumeric German identification number)\n5 - Bloomberg Ticker (Bloomberg letters code that identify a company's securities)\n6 - BBGID (The Bloomberg Global ID)\n7 - Reuters RIC (Reuters instrument code)\n8 – FIGI (Financial Instrument Global Identifier)\n9 - Other code by members of the Association of National Numbering Agencies\n99 - Code attributed by the undertaking\n\nClosed list is taken from QRT Log issued by EIOPA July 2015. Modified to add LEI in 2019 \nFor OTC derivatives cf Mifid II requirements",
+            "description": "Codification chosen to identify the share of the CIS\n\nOne of the options in the following closed list to be used:\n1 - ISO 6166 for ISIN code\n2 - CUSIP (The Committee on Uniform Securities Identification Procedures number assigned by the CUSIP Service Bureau for U.S. and Canadian companies)\n3 - SEDOL (Stock Exchange Daily Official List for the London Stock Exchange)\n4 - WKN (Wertpapier Kenn-Nummer, the alphanumeric German identification number)\n5 - Bloomberg Ticker (Bloomberg letters code that identify a company's securities)\n6 - BBGID (The Bloomberg Global ID)\n7 - Reuters RIC (Reuters instrument code)\n8 - FIGI (Financial Instrument Global Identifier)\n9 - Other code by members of the Association of National Numbering Agencies\n99 - Code attributed by the undertaking\n\nClosed list is taken from QRT Log issued by EIOPA July 2015. Modified to add LEI in 2019 \nFor OTC derivatives cf Mifid II requirements",
             "$ref": "#/components/schemas/identification_code_type"
           },
           "3_Portfolio_name": {
@@ -1546,6 +1550,72 @@
                 "$ref": "#/components/schemas/empty_string"
               }
             ]
+          },
+          "140_Custodian_identification_code": {
+            "description": "Identification code of the custodian. Identification of the custodian code using the LEI if available. If none is available this item shall not be reported.",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/lei_code"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "141_Type_of_custodian_identification_code": {
+            "description": "Type of code used for the custodian identification. 1 = LEI, 9 = None or internal. Mandatory if custodian identification code is provided.",
+            "$ref": "#/components/schemas/identification_code_type"
+          },
+          "142_Bail-in_Rule": {
+            "description": "Indicates if a bail-in rule is applicable for the debt instrument. 0 = Not assessed, 1 = Yes, 2 = No, 9 = Not applicable.",
+            "type": "string",
+            "enum": ["0", "1", "2", "9", ""]
+          },
+          "143_Maturity_date_expected": {
+            "description": "Expected redemption date after considering potential prepayment or extension options, based on expected maturity.",
+            "$ref": "#/components/schemas/iso_date"
+          },
+          "144_Modified_duration_to_maturity_date_expected": {
+            "description": "Modified duration based on the expected maturity date (field 143).",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "145_Credit_sensitivity_expected": {
+            "description": "Credit sensitivity (modified duration) based on the expected maturity date (field 143).",
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/empty_string"
+              }
+            ]
+          },
+          "146_PIK": {
+            "description": "Indicates presence and treatment of payment-in-kind (PIK) features. 0 = No PIK, 1 = PIK included in redemption rate and coupon fields (PIK accrual period in coupon frequency), 2 = PIK included in redemption rate only, 3 = PIK as regular payment included in coupon fields, 4 = PIK not described in TPT.",
+            "type": "string",
+            "enum": ["0", "1", "2", "3", "4", ""]
+          },
+          "147_Infrastructure_investment_additional_QRT": {
+            "description": "Infrastructure investment classification for QRT S.06.02 C0330. 1 - Not an infrastructure investment; 2 - Infrastructure non-qualifying: Government Guarantee; 3 - Infrastructure non-qualifying: Government Supported including Public Finance initiative; 4 - Infrastructure non-qualifying: Supranational Guarantee/Supported; 9 - Other non-qualifying infrastructure investments; 12 - Infrastructure qualifying: Government Guarantee; 13 - Infrastructure qualifying: Government Supported including Public Finance initiative; 14 - Infrastructure qualifying: Supranational Guarantee/Supported; 19 - Other qualifying infrastructure investments; 20 - ELTIF investing in infrastructure assets or other assets.",
+            "type": "string",
+            "enum": ["1", "2", "3", "4", "9", "12", "13", "14", "19", "20", ""]
+          },
+          "148_Economic_sector_NACE2.1": {
+            "description": "Economic sector of issuer using NACE V2.1 code. Provide maximum available detail; use V2.0 in field 54 if V2.1 not available.",
+            "$ref": "#/components/schemas/nace_2_1_code"
           },
           "8b_Total_number_of_shares": {
             "description": "Total number of shares",
