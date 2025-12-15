@@ -440,7 +440,7 @@
         "additionalProperties": false,
         "properties": {
           "1000_TPT_Version": {
-            "description": "TPT Published Version\n\nV2.0 (official); dated 9 January 2015\nV3.0 (official) dated 12 October 2015\nV4.0 (official) dated 13 February 2018\nV5.0 (official) dated 16 January 2020\nV6.0 (official) dated 10 January 2022",
+            "description": "TPT Published Version\n\nV2.0 (official); dated 9 January 2015\nV3.0 (official) dated 12 October 2015\nV4.0 (official) dated 13 February 2018\nV5.0 (official) dated 16 January 2020\nV6.0 (official) dated 10 January 2022\nV7.0 (official) dated 25 November 2024",
             "type": "string",
             "maxLength": 255
           },
