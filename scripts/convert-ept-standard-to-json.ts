@@ -1,7 +1,7 @@
 // Copyright (c) 2024 Captor Fund Management AB.
 // see LICENSE file
 
-// npx ts-node scripts/convert-ept-standard-to-json.ts > json/EPT_V2.1_Final.json
+// npx tsx scripts/convert-ept-standard-to-json.ts > json/EPT_V2.1_Final.json
 
 import excelToJson from "convert-excel-to-json";
 

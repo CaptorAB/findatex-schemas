@@ -6,7 +6,7 @@ import * as path from "path";
 
 // Load the TPT schema
 const tptSchema = JSON.parse(
-  fs.readFileSync(path.join(__dirname, "../schemas/tpt.schema.json"), "utf8")
+  fs.readFileSync(path.join(__dirname, "../schemas/tpt.v7.schema.json"), "utf8")
 );
 
 // Initialize AJV validator with formats support

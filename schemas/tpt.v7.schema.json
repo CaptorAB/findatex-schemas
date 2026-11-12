@@ -502,7 +502,8 @@
             "description": "Amount of cash of the fund / total net asset value of the fund, in %\n\nnumber with floating decimal: 1 = 100%\n\nInclude cash and short term cash equivalents [excludes CIC 74 and other cash equivalents that might be considereed long term]",
             "anyOf": [
               {
-                "type": "number"
+                "type": "number",
+                "maximum": 1
               },
               {
                 "type": "null"
@@ -510,8 +511,7 @@
               {
                 "$ref": "#/components/schemas/empty_string"
               }
-            ],
-            "maximum": 1
+            ]
           },
           "10_Portfolio_modified_duration": {
             "description": "Weighted average modified duration of portfolio positions\n\nnumber with floating decimal\n\nOnly required for relevant asset types (including derivatives)",
@@ -811,7 +811,8 @@
             "description": "Redemption amount in % of nominal amount\n\nnumber with floating decimal\n\nIf known 1=100%.                                                          \nLinked to field 19 (Nominal amount).",
             "anyOf": [
               {
-                "type": "number"
+                "type": "number",
+                "minimum": 0
               },
               {
                 "type": "null"
@@ -819,8 +820,7 @@
               {
                 "$ref": "#/components/schemas/empty_string"
               }
-            ],
-            "minimum": 0
+            ]
           },
           "42_Callable_putable": {
             "description": "Cal = Call\nPut = Put\nCap = Cap\nFlr= Floor\nempty if none\n\nAlpha(3)( \"Cal\" = Call / \"Put\" = Put / \"Cap\" = Cap / \"Flr\" = Floor)\n\nEnter the characteristics of the shorter maturity option in case of various options. Empty if no options. If the financial instrument has multiple options, the derivative part has to be used.",
@@ -1042,7 +1042,8 @@
             "description": "Redemption amount in % of nominal amount\n\nnumber with floating decimal\n\n1=100%",
             "anyOf": [
               {
-                "type": "number"
+                "type": "number",
+                "minimum": 0
               },
               {
                 "type": "null"
@@ -1050,8 +1051,7 @@
               {
                 "$ref": "#/components/schemas/empty_string"
               }
-            ],
-            "minimum": 0
+            ]
           },
           "80_Issuer_name_of_the_underlying_asset": {
             "description": "name of the issuer\n\nAlpha (max 255)\n\nThis is the issuer of the underlying instrument : for a CDS it is the name of the issuer of reference, for a convertible bond it is the issuer of the bond which may be different from the issuer of the convertible bond itself. For an Index put \"index\"",

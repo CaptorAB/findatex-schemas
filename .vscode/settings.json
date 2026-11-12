@@ -7,13 +7,18 @@
       "url": "./schemas/ept.schema.json"
     },
     {
-      "fileMatch": ["*_TPTV6_*.json"],
-      "url": "./schemas/tpt.schema.json"
+      "fileMatch": ["*_TPTV6_*.json", "*_TPTV7_*.json"],
+      "url": "./schemas/tpt.v7.schema.json"
+    },
+    {
+      "fileMatch": ["*_TPTV8_*.json"],
+      "url": "./schemas/tpt.v8.schema.json"
     }
   ],
   "yaml.schemas": {
     "schemas/ept.schema.json": ["findatex-ept*.yaml"],
-    "schemas/tpt.schema.json": ["*_TPTV6_*.yaml"]
+    "schemas/tpt.v7.schema.json": ["*_TPTV6_*.yaml", "*_TPTV7_*.yaml"],
+    "schemas/tpt.v8.schema.json": ["*_TPTV8_*.yaml"]
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -23,5 +28,6 @@
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "cSpell.words": ["findatex"]
 }

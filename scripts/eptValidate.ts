@@ -10,7 +10,7 @@ import { version } from "../package.json";
 import * as fs from "fs";
 import eptSchema from "../schemas/ept.schema.json";
 
-const ajv = new Ajv();
+const ajv = new Ajv({ allowUnionTypes: true });
 addFormats(ajv);
 ajv.addKeyword("components");
 const validateEpt = ajv.compile(eptSchema);

@@ -1,7 +1,7 @@
 // see LICENSE file
 //
 // Usage:
-//   npx ts-node scripts/convert-tpt-standard-to-json.ts \\
+//   npx tsx scripts/convert-tpt-standard-to-json.ts \\
 //     original/TPT_V7\\ 20241125_updated.xlsx \\
 //     > json/TPT_V7_20241125_updated.json
 //
@@ -76,7 +76,7 @@ function main() {
   const [inputPath] = process.argv.slice(2);
   if (!inputPath) {
     console.error(
-      "Usage: ts-node scripts/convert-tpt-standard-to-json.ts <path-to-xlsx>"
+      "Usage: tsx scripts/convert-tpt-standard-to-json.ts <path-to-xlsx>"
     );
     process.exit(1);
   }

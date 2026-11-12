@@ -158,7 +158,7 @@ const EPT_HEADERS = [
 const fillOutHoles = (data: Record<string, any>[]): Record<string, any>[] => {
   const result: Record<string, any>[] = [];
   data.forEach((row: Record<string, any>) => {
-    const filledRow = {};
+    const filledRow: Record<string, any> = {};
     EPT_HEADERS.forEach((header: string) => {
       filledRow[header] = row[header] ? row[header] : null;
     });
@@ -182,7 +182,8 @@ program
       }
 
       let excelFileName = filePath.replace(/\.yaml/, "") + ".xlsx";
-      excelFileName = excelFileName.split(/[\\/]/).pop();
+      excelFileName =
+        excelFileName.split(/[\\/]/).pop() ?? filePath.replace(/\.yaml$/, "") + ".xlsx";
 
       const text = fs.readFileSync(filePath, "utf8");
       const data = parse(text);

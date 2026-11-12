@@ -46,8 +46,12 @@ program
       });
 
       const sheetNames: string[] = Object.keys(document);
-      let yamlFile = filePath.replace(/\.xlsx/, "") + ".yaml";
-      yamlFile = yamlFile.split(/[\\/]/).pop();
+      const yamlFile =
+        filePath
+          .replace(/\.xlsx$/, "")
+          .concat(".yaml")
+          .split(/[\\/]/)
+          .pop() ?? filePath.replace(/\.xlsx$/, "") + ".yaml";
 
       const data: Record<string, any>[] = document[sheetNames[0]];
       data.shift(); // remove headers

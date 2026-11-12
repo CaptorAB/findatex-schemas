@@ -8,12 +8,17 @@
     "allowJs": true /* Allow JavaScript files to be a part of your program. Use the 'checkJS' option to get errors from these files. */,
     "esModuleInterop": true /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */,
     "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. */,
-    "skipLibCheck": true /* Skip type checking all .d.ts files. */
+    "skipLibCheck": true /* Skip type checking all .d.ts files. */,
+    "types": ["node"]
   },
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "dist"],
   "files": [
+    "./scripts/convert-ept-standard-to-json.ts",
+    "./scripts/convert-tpt-standard-to-json.ts",
     "./scripts/eptExcel2yaml.ts",
     "./scripts/eptValidate.ts",
-    "./scripts/eptYaml2excel.ts"
+    "./scripts/eptYaml2excel.ts",
+    "./scripts/tptValidate.ts",
+    "./types/convert-excel-to-json.d.ts"
   ]
 }

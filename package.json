@@ -1,7 +1,7 @@
 {
   "name": "findatex-schemas",
   "private": false,
-  "version": "0.3.5",
+  "version": "1.0.0",
   "author": "Captor Fund Management AB",
   "description": "findatex JSON Schema for EPT, EMT, EET and TPT",
   "keywords": [
@@ -14,36 +14,44 @@
   ],
   "scripts": {
     "build": "tsc",
+    "prepack": "npm run build",
     "test": "vitest run --reporter=verbose"
   },
   "dependencies": {
-    "ajv": "^8.12.0",
-    "ajv-formats": "^2.1.1",
-    "commander": "^11",
+    "ajv": "^8",
+    "ajv-formats": "^3",
+    "commander": "^15",
     "convert-excel-to-json": "^1",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.2",
     "xlsx": "^0.18",
     "yaml": "^2"
   },
   "devDependencies": {
     "@types/json-schema": "^7",
-    "@types/node": "^20",
-    "@vitest/ui": "^3.2.4",
-    "ajv-cli": "^5.0.0",
+    "@types/node": "^24",
+    "@vitest/ui": "^5",
+    "ajv-cli": "^5",
     "currency-codes": "^2",
-    "vitest": "^3.2.4"
+    "vitest": "^5"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/CaptorAB/findatex-schemas.git"
+    "url": "git://github.com/fondbolagens/findatex-schemas.git"
   },
-  "homepage": "https://github.com/CaptorAB/findatex-schemas",
+  "homepage": "https://github.com/fondbolagens/findatex-schemas",
   "bugs": {
-    "url": "https://github.com/CaptorAB/findatex-schemas/issues"
+    "url": "https://github.com/fondbolagens/findatex-schemas/issues"
   },
   "license": "MIT",
   "bin": {
-    "eptExcel2yaml": "dist/eptExcel2yaml.js",
-    "eptYaml2excel": "dist/eptYaml2excel.js",
-    "eptValidate": "dist/eptValidate.js"
+    "eptExcel2yaml": "dist/scripts/eptExcel2yaml.js",
+    "eptYaml2excel": "dist/scripts/eptYaml2excel.js",
+    "eptValidate": "dist/scripts/eptValidate.js",
+    "tptValidate": "dist/scripts/tptValidate.js"
+  },
+  "allowScripts": {
+    "fsevents@2.3.3": true,
+    "esbuild@0.28.2": true
   }
 }
