@@ -1,7 +1,7 @@
 {
   "name": "findatex-schemas",
   "private": false,
-  "version": "0.5.2",
+  "version": "1.0.0",
   "author": "Captor Fund Management AB",
   "description": "findatex JSON Schema for EPT, EMT, EET and TPT",
   "keywords": [
@@ -20,19 +20,20 @@
   "dependencies": {
     "ajv": "^8",
     "ajv-formats": "^3",
-    "commander": "^14",
+    "commander": "^15",
     "convert-excel-to-json": "^1",
+    "tsx": "^4.23.15",
     "typescript": "^6.0.2",
     "xlsx": "^0.18",
     "yaml": "^2"
   },
   "devDependencies": {
     "@types/json-schema": "^7",
-    "@types/node": "^22",
-    "@vitest/ui": "^4",
+    "@types/node": "^24",
+    "@vitest/ui": "^5",
     "ajv-cli": "^5",
     "currency-codes": "^2",
-    "vitest": "^4"
+    "vitest": "^5"
   },
   "repository": {
     "type": "git",
@@ -48,5 +49,9 @@
     "eptYaml2excel": "dist/scripts/eptYaml2excel.js",
     "eptValidate": "dist/scripts/eptValidate.js",
     "tptValidate": "dist/scripts/tptValidate.js"
+  },
+  "allowScripts": {
+    "fsevents@2.3.3": true,
+    "esbuild@0.28.2": true
   }
 }

@@ -10,7 +10,8 @@ The data can then be written in YAML (with editor validation) and converted to .
 ## JSON schemas for [https://findatex.eu](https://findatex.eu) formats
 
 - [ept.schema.json](/schemas/ept.schema.json) corresponds to [EPT_V2.1_Final.xlsx](https://findatex.eu/mediaitem/d6a4e027-ee5c-4b61-a8e0-e6f147f5090f/EPT_V2.1_Final.xlsx)
-- [tpt.schema.json](/schemas/tpt.schema.json) corresponds to [TPT_V6_20220314_final.xlsx](original/TPT_V6_20220314_final.xlsx)
+- [tpt.v7.schema.json](/schemas/tpt.v7.schema.json) corresponds to [TPT_V7_20241125_updated.json](json/TPT_V7_20241125_updated.json)
+- [tpt.v8.schema.json](/schemas/tpt.v8.schema.json) corresponds to [TPT V8 post consultation 261008V2.xlsx](<original/TPT V8 post consultation 261008V2.xlsx>)
 - EMT not done yet
 - EET not done yet
 
@@ -60,6 +61,7 @@ eptExcel2yaml examples/findatex-ept-captor-2023-12-29.xlsx
 eptYaml2excel findatex-ept-captor-2023-12-29.yaml
 eptValidate findatex-ept-captor-2023-12-29.yaml
 tptValidate tpt.yaml
+tptValidate --v7 tpt.yaml
 ```
 
 ## Contributions

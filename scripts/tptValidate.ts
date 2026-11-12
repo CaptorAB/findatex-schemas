@@ -8,21 +8,23 @@ import addFormats from "ajv-formats";
 import { parse } from "yaml";
 import { version } from "../package.json";
 import * as fs from "fs";
-import schema from "../schemas/tpt.schema.json";
+import schemaV7 from "../schemas/tpt.v7.schema.json";
+import schemaV8 from "../schemas/tpt.v8.schema.json";
 
 const ajv = new Ajv({ allowUnionTypes: true });
 addFormats(ajv);
 ajv.addKeyword("components");
-const validate = ajv.compile(schema);
 
 program
   .version(version)
+  .option("--v7", "validate against the TPT V7 schema instead of V8")
   .argument("<files...>", "one or more yaml files")
-  .action((files: string[]) => {
+  .action((files: string[], options: { v7?: boolean }) => {
     if (!files) {
       console.error("no file specified");
       process.exit(1);
     }
+    const validate = ajv.compile(options.v7 ? schemaV7 : schemaV8);
     files.forEach((filePath) => {
       if (!filePath.endsWith(".yaml")) {
         console.error(filePath + " does not seems to be an .yaml file");
